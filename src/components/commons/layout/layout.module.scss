@@ -5,9 +5,8 @@
   width: 100%;
   //max-width: 2460px;
   display: flex;
-  overflow: hidden;
 
-  height: 100vh;
+  min-height: 100dvh;
 
   //border: 3px solid red;
 
@@ -20,34 +19,6 @@
 
     .contact, .project, .about {
       width: 100%;
-    }
-
-
-    aside {
-      display: flex;
-      display: none;
-      //border: 5px solid yellow;
-    }
-
-    .nav {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      height: 100%;
-      background: crimson;
-      padding: 0 4rem;
-      box-sizing: border-box;
-
-      border: 1px solid #0c0d65;
-      //transform-origin: left;
-    }
-
-    .project_nav {
-      background: burlywood;
-    }
-
-    .home_nav {
-      background: #000;
-      //opacity: .6;
     }
 
     main {

@@ -1,0 +1,138 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  //border: 1px solid #000;
+  margin-bottom: 10vmax;
+  min-height: 100vh;
+  z-index: 1;
+
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .bg {
+      z-index: -1;
+
+      svg {
+        position: absolute;
+        width: 100%;
+        //height: 100%;
+        top: -30%;
+        margin: 0 auto;
+
+      }
+    }
+
+
+    .wrapper {
+      position: relative;
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      place-items: center;
+
+      //border: 1px solid blue;
+
+
+      .txt {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        h3 {
+          width: max-content;
+          //flex-basis: 2rem;
+          //border: 1px solid #000;
+        }
+
+
+        & > * {
+          flex: 1;
+          //border: 1px solid #000;
+        }
+
+        .divider {
+          //flex: .7;
+          width: 100%;
+
+          align-self: center;
+          //max-width: 50ch;
+
+          span {
+            display: block;
+            height: 1.1rem;
+            border-radius: .2rem;
+            background-color: #D9D9D9;
+            max-width: 75%;
+            margin: 0 auto;
+          }
+
+          //padding: 0 3rem;
+        }
+
+        .desc {
+          max-width: 50ch;
+          font-size: 1.3rem;
+          font-weight: 300;
+          line-height: 140%;
+          // todo -> bad
+          padding-left: 2rem;
+        }
+      }
+
+      .msgs {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 7rem;
+        max-width: 85%;
+
+        .msg {
+          display: flex;
+          flex-flow: column;
+          gap: 1rem;
+          align-items: center;
+          text-align: center;
+
+          .title {
+            font-family: s.$fonts-sofia-pro-soft !important;
+            color: s.$clrs-grey-txt;
+          }
+
+          p {
+            max-width: 50ch;
+            //font-size: 1rem;
+            color: s.$clrs-grey-txt;
+            //font-weight: 300;
+          }
+        }
+      }
+
+      .marquee {
+        width: calc(100% + 15rem);
+      }
+
+      .marquee_chip {
+        min-height: initial;
+        height: auto;
+        margin-left: 5rem;
+        border-radius: 5000px;
+        padding: .5rem 1rem;
+
+
+        margin-top: 10rem;
+
+        p {
+          font-size: 2.5rem;
+          font-weight: 300;
+          color: s.$clrs-grey-txt-light;
+        }
+      }
+    }
+  }
+}

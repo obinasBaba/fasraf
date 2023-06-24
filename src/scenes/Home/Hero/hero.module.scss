@@ -1,0 +1,145 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+
+
+  &::before{
+    content: '';
+    position: absolute;
+    left: -12%;
+    top: -5%;
+    border-radius: 500px;
+    opacity: 0.5;
+    background: linear-gradient(135deg, #7DFFA8 3.27%, #0D6558 100%);
+    filter: blur(100px);
+    width: 49.125rem;
+    height: 49.125rem;
+    flex-shrink: 0;
+    z-index: -1;
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    right: -22%;
+    //top: -10%;
+    border-radius: 500px;
+    opacity: 0.5;
+    background: linear-gradient(135deg, #7DFFA8 3.27%, #0D6558 100%);
+    filter: blur(100px);
+    width: 49.125rem;
+    height: 49.125rem;
+    flex-shrink: 0;
+    z-index: -1;
+    opacity: 0.5;
+    background: var(--banner-gradient, linear-gradient(137deg, #CAF8D9 3.27%, #429488 100%));
+    filter: blur(100px);
+  }
+
+  & :local {
+
+
+
+    .bottom_overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .gradient_overlay {
+      position: absolute;
+      top: -10%;
+      left: 8%;
+      right: 0;
+      max-width: 80%;
+      z-index: -1;
+      pointer-events: none;
+
+    }
+
+    .decor_shape_1, .decor_shape_2 {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .decor_shape_1{
+      left: 3%;
+      top: 20%;
+    }
+
+    .decor_shape_2 {
+      right: 10%;
+    }
+
+    .wrapper {
+      position: relative;
+      max-width: 90rem;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .typo{
+        display: flex;
+        flex-flow: column;
+        gap: 2rem;
+      }
+
+      .big_txt {
+        font-family: s.$fonts-poppins !important;
+        font-weight: 900;
+        color: #454545;
+        font-size: 4.3rem;
+        letter-spacing: -.08rem;
+        width: max-content;
+
+        span {
+          display: inline-block;
+        }
+
+        .mid{
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+
+          .swash {
+            position: absolute;
+            bottom: -47%;
+            pointer-events: none;
+          }
+        }
+      }
+
+      .desc{
+        max-width: 43ch;
+        font-size: 1.4rem;
+        color: s.$clrs-grey-txt;
+        font-weight: 400;
+      }
+
+      .cta{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+    }
+  }
+}
+
+
+

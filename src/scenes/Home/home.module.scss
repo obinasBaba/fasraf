@@ -1,122 +1,12 @@
 @use 'src/styles/index' as s;
 
 .container {
-  width: 100%;
-  background-color: #FAF6EE;
-  min-height: 100dvh;
   position: relative;
-  z-index: 1;
-
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
+  width: 100%;
+  min-height: 100dvh;
 
   & :local {
 
-    .bottom_overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-
-      img {
-        display: block;
-        width: 100%;
-      }
-    }
-
-    .gradient_overlay {
-      position: absolute;
-      top: -10%;
-      left: 8%;
-      right: 0;
-      max-width: 80%;
-      z-index: -1;
-      pointer-events: none;
-
-    }
-
-    .wrapper {
-      position: relative;
-      max-width: 90rem;
-      margin: 0 auto;
-      width: 100%;
-      padding-top: 6vmax;
-
-
-      .decor_shape_1, .decor_shape_2 {
-        position: absolute;
-        pointer-events: none;
-      }
-
-      .decor_shape_2 {
-        right: 0;
-      }
-
-      .big_txt {
-        font-family: s.$fonts-poppins !important;
-        font-weight: 900;
-        color: #454545;
-        text-align: center;
-        font-size: 4.8rem;
-        letter-spacing: -.1rem;
-        width: max-content;
-        margin: 0 auto;
-
-        @keyframes wheel {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
-        span {
-          display: inline-block;
-        }
-
-        .top {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          //margin-bottom: .5rem;
-          //border: 1px solid #000;
-
-          .swash {
-            position: absolute;
-            bottom: -50%;
-            pointer-events: none;
-          }
-
-          .wheel {
-            position: absolute;
-            right: -10%;
-            pointer-events: none;
-            animation: wheel 5s linear infinite;
-          }
-        }
-
-        .btom {
-          position: relative;
-          width: max-content;
-          margin: 0 auto;
-          display: grid;
-          place-items: center;
-
-          //border: 1px solid #000;
-
-          svg.wheel {
-            position: absolute;
-            left: -15%;
-            margin-top: auto;
-            animation: wheel 30s linear infinite;
-            pointer-events: none;
-          }
-        }
-      }
-
-    }
   }
 }
 

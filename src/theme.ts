@@ -41,7 +41,7 @@ const theme = createTheme({
       default: '#0D0D0D',
     },
     text: {
-      primary: '#fff',
+      // primary: '#fff',
     },
     primary: {
       main: '#AEAFFF',

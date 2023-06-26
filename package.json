@@ -30,7 +30,6 @@
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.8",
     "@mui/material": "5.12.2",
-    "react-wrap-balancer": "0.5.0",
     "clsx": "1.2.1",
     "color2k": "^2.0.2",
     "framer-motion": "^10.12.5",
@@ -40,9 +39,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fast-marquee": "1.6.0",
-    "react-inlinesvg": "3.0.2"
+    "react-inlinesvg": "3.0.2",
+    "react-wrap-balancer": "0.5.0"
   },
   "devDependencies": {
+    "@builder.io/partytown": "0.8.0",
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
     "@types/lodash.debounce": "4.0.7",

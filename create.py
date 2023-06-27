@@ -26,9 +26,6 @@ styleTxt = """@use 'src/styles/index' as s;
 .container{
   width: 100%;
 
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
-
   & :local{
 
     .wrapper{

@@ -7,6 +7,14 @@ import Shapes1 from '@/public/assets/hero/shaps-1.svg';
 import Shapes2 from '@/public/assets/hero/shapes-2.svg';
 import FasrafTriangle from '@/public/assets/hero/fasraf-logo.png';
 
+
+const FasrafButton = ({text} : any) => (
+  <Button variant="contained" size="large" className={s.fas_btn}>
+    {text}
+  </Button>
+)
+
+
 const Hero = () => {
   return (
     <div className={s.container}>
@@ -21,13 +29,13 @@ const Hero = () => {
         <div className={s.typo}>
           <Typography variant="h1" className={s.big_txt}>
             <span className={s.top}>Build the perfect</span>
-            <br />{' '}
+            <br />
             <span className={s.mid}>
               <div className={s.swash}>
                 <Image src={Swash} alt="swash decoration" />
               </div>
               solution for your
-            </span>{' '}
+            </span>
             <br />
             <span className={s.btom}>Business</span>
           </Typography>
@@ -40,13 +48,13 @@ const Hero = () => {
               Contact
             </Button>
 
-            <Button variant="contained" size="large">
-              Contact
+            <Button variant="outlined" size="large">
+              Projects
             </Button>
           </div>
         </div>
 
-        <div className={s.img}>
+        <div className={s.fasraf_triangle}>
           <Image src={FasrafTriangle} alt="fasraf triangle" />
         </div>
       </div>

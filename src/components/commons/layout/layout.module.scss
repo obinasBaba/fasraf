@@ -3,8 +3,8 @@
 .root {
   position: relative;
   width: 100%;
-  //max-width: 2460px;
   display: flex;
+  flex-flow: column;
 
   min-height: 100dvh;
 

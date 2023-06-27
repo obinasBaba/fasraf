@@ -1,0 +1,102 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  margin: 8vmax 0;
+
+  & :local {
+
+    .wrapper {
+      max-width: 70rem;
+      margin: 0 auto;
+
+      header {
+        //border: 1px solid #000;
+        display: grid;
+        grid-auto-flow: row;
+        gap: 1rem;
+        place-items: center;
+
+        .icon {
+          padding: 1rem;
+          border-radius: 50%;
+          background: var(--banner-gradient, linear-gradient(137deg, #CAF8D9 3.27%, #63afa4 100%));
+          aspect-ratio: 1/1;
+          display: grid;
+          place-items: center;
+        }
+
+        .sub {
+          letter-spacing: .3rem;
+          text-transform: uppercase;
+        }
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 5rem auto 0;
+        width: max-content;
+
+        //border: 1px solid #000;
+
+        .card_wrap {
+          padding: 1.5rem;
+          background: var(--banner-gradient, linear-gradient(137deg, #CAF8D9 3.27%, #6db688 100%));
+          background: linear-gradient(137deg, rgba(202, 248, 217, 0.26) 3.27%,
+            rgba(213, 138, 57, 0.25) 120%);
+          border-radius: .6rem;
+
+
+          hr {
+            border-color: #ececec;
+            margin: 1rem 0;
+          }
+
+          .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: .6rem;
+
+            .info {
+              display: grid;
+              grid-template-columns: auto 1fr;
+              grid-gap: 0 1rem;
+
+              h6 {
+                grid-area: 1/2/2/3;
+                margin-top: -.2rem;
+              }
+
+              p {
+                grid-area: 2/2/3/3;
+                color: gray;
+              }
+            }
+          }
+        }
+
+      }
+
+      form {
+        margin: 5rem auto 0;
+        padding: 5rem;
+        max-width: 50rem;
+        display: flex;
+        flex-flow: column;
+        gap: 1.5rem;
+        border-radius: 1rem;
+        background: linear-gradient(137deg, rgba(202, 248, 217, 0.26) 3.27%,
+          rgba(213, 138, 57, 0.25) 120%);
+
+        button {
+          max-width: 13rem;
+          margin: 3rem auto 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -21,10 +21,19 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
+        sizeLarge: {
+          padding: '.6rem 2rem',
+          fontSize: '1.1rem',
+          boxShadow: '.5rem .5rem rgba(241, 102, 51, 0.2);',
+          ':hover': {
+            boxShadow: '.4rem .4rem rgba(241, 102, 51, 0.2);',
+            // transform: 'translateY(-.2rem)',
+          },
+        },
+
         root: {
           textTransform: 'capitalize',
           borderRadius: '5000px',
-          // lineHeight: '100%'
         },
       },
     },
@@ -44,7 +53,7 @@ const theme = createTheme({
       // primary: '#fff',
     },
     primary: {
-      main: '#AEAFFF',
+      main: '#f16633',
     },
     secondary: {
       main: '#8d8d8d',

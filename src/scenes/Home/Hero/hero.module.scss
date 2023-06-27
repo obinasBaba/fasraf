@@ -38,7 +38,6 @@
     height: 49.125rem;
     flex-shrink: 0;
     z-index: -1;
-    opacity: 0.5;
     background: var(--banner-gradient, linear-gradient(137deg, #CAF8D9 3.27%, #429488 100%));
     filter: blur(100px);
   }
@@ -90,52 +89,62 @@
       max-width: 90rem;
       margin: 0 auto;
       width: 100%;
-      display: flex;
+      display: grid;
+      //display: flex;
+      grid-template-columns: 1fr 1fr;
       justify-content: space-between;
       align-items: center;
+      //border: 1px solid #000;
+
 
       .typo{
         display: flex;
         flex-flow: column;
         gap: 2rem;
-      }
 
-      .big_txt {
-        font-family: s.$fonts-poppins !important;
-        font-weight: 900;
-        color: #454545;
-        font-size: 4.3rem;
-        letter-spacing: -.08rem;
-        width: max-content;
+        .big_txt {
+          font-family: s.$fonts-poppins !important;
+          font-weight: 900;
+          color: #454545;
+          font-size: 4.3rem;
+          letter-spacing: -.08rem;
+          width: max-content;
 
-        span {
-          display: inline-block;
-        }
+          span {
+            display: inline-block;
+          }
 
-        .mid{
-          display: inline-flex;
-          align-items: center;
-          position: relative;
+          .mid{
+            display: inline-flex;
+            align-items: center;
+            position: relative;
 
-          .swash {
-            position: absolute;
-            bottom: -47%;
-            pointer-events: none;
+            .swash {
+              position: absolute;
+              bottom: -47%;
+              pointer-events: none;
+            }
           }
         }
+
+        .desc{
+          max-width: 43ch;
+          font-size: 1.4rem;
+          color: s.$clrs-grey-txt;
+          font-weight: 400;
+        }
+
+        .cta{
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          //border: 1px solid #000;
+
+        }
       }
 
-      .desc{
-        max-width: 43ch;
-        font-size: 1.4rem;
-        color: s.$clrs-grey-txt;
-        font-weight: 400;
-      }
-
-      .cta{
-        display: flex;
-        gap: 2rem;
-        align-items: center;
+      .fasraf_triangle{
+        justify-self: end;
       }
 
     }
@@ -143,4 +152,14 @@
 }
 
 
+.fas_btn{
+  box-shadow: 6px 6px rgba(241, 102, 51, 0.2);
+  transition: transform ;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 8px 8px rgba(241, 102, 51, 0.2);
+
+  }
+}
 

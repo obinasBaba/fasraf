@@ -16,9 +16,6 @@ const nextConfig = {
       transform: '@mui/lab/{{member}}',
     },
   },
-  experimental: {
-    nextScriptWorkers: true,
-  },
   compiler: {
     removeConsole: false,
   },

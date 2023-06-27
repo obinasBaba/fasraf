@@ -49,9 +49,11 @@ export default function TopNavBar() {
             </Link>
           </div>
 
-          <Button variant="contained" size="large">
-            Contact
-          </Button>
+          <Link href='/contact'>
+            <Button variant="contained" size="large">
+              Contact
+            </Button>
+          </Link>
         </div>
       </nav>
     </HideOnScroll>

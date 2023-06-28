@@ -26,13 +26,13 @@ export default function TopNavBar() {
     <HideOnScroll>
       <nav className={s.container}>
         <div className={s.wrapper}>
-          <div className={s.logo}>
+          <Link href='/' className={s.logo}>
             <Image src={AppLogo} alt="rahove logo" />
             <div className={s.logo_txt}>
               <Typography variant='h5'>Fasraf</Typography>
               <Typography noWrap>Business Solutions</Typography>
             </div>
-          </div>
+          </Link>
 
           <div className={s.links}>
             <Link href='/'>

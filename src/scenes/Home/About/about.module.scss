@@ -3,14 +3,11 @@
 .container {
   position: relative;
   width: 100%;
-  //border: 1px solid #000;
   margin-bottom: 10vmax;
+  margin-top: 5rem;
   min-height: 100vh;
   z-index: 1;
 
-
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
 
   & :local {
 
@@ -19,11 +16,13 @@
 
       svg {
         position: absolute;
-        width: 100%;
-        //height: 100%;
         top: -30%;
         margin: 0 auto;
         pointer-events: none;
+        width: 100%;
+
+        @include s.media-breakpoint-up(md){
+        }
 
       }
     }
@@ -33,7 +32,7 @@
       position: relative;
       max-width: 90rem;
       margin: 0 auto;
-      padding: 1rem;
+      padding: 1.5rem;
       display: grid;
       place-items: center;
 
@@ -42,11 +41,26 @@
 
       .txt {
         display: flex;
+        flex-flow: column;
         justify-content: space-evenly;
         width: 100%;
+        gap: 2rem;
+
+        //border: 1px solid #000;
+
+
+        @include s.media-breakpoint-up(md) {
+          flex-flow: row;
+          gap: 0;
+        }
 
         h3 {
-          width: max-content;
+
+          text-align: center;
+          @include s.media-breakpoint-up(md) {
+            text-align: initial;
+            width: max-content;
+          }
           //flex-basis: 2rem;
           //border: 1px solid #000;
         }
@@ -81,17 +95,30 @@
           font-size: 1.3rem;
           font-weight: 300;
           line-height: 140%;
-          // todo -> bad
-          padding-left: 2rem;
+          text-align: center;
+
+          @include s.media-breakpoint-up(md) {
+            padding-left: 2rem;
+          }
         }
       }
 
       .msgs {
         display: flex;
+        flex-flow: column;
+        gap: 3.5rem;
         width: 100%;
         justify-content: space-between;
         margin-top: 7rem;
-        max-width: 85%;
+
+        //border: 1px solid #000;
+
+        @include s.media-breakpoint-up(md) {
+          max-width: 85%;
+          margin-top: 7rem;
+          flex-flow: row;
+          gap: 0;
+        }
 
         .msg {
           display: flex;
@@ -116,22 +143,39 @@
 
       .marquee {
         width: calc(100% + 15rem);
+
+
+        margin-top: 7rem;
+
+        @include s.media-breakpoint-up(md) {
+          margin-top: 10rem;
+        }
+
       }
 
       .marquee_chip {
         min-height: initial;
         height: auto;
-        margin-left: 5rem;
+        margin-left: 1rem;
         border-radius: 5000px;
-        padding: .5rem 1rem;
+        padding: .5rem 0;
+
+        @include s.media-breakpoint-up(md) {
+          margin-left: 5rem;
+          padding: .5rem 1rem;
+        }
 
 
-        margin-top: 10rem;
 
         p {
-          font-size: 2.5rem;
+          font-size: 1.4rem;
           font-weight: 300;
-          color: s.$clrs-grey-txt-light;
+          color: #595959;
+
+          @include s.media-breakpoint-up(md) {
+            font-size: 2.5rem;
+            color: #9f9f9f;
+          }
         }
       }
     }

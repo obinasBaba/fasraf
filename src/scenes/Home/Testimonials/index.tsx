@@ -47,12 +47,12 @@ const Testimonials = () => {
           dragSnapToOrigin={true}
           whileDrag={{ scale: 0.95 }}
           dragElastic={false}
-          style={{cursor: 'grab'}}
+          style={{ cursor: 'grab' }}
           // dragMomentum={false}
         >
           <Swiper
+            loop
             slidesPerView={'auto'}
-            // slidesPerView={4}
             centeredSlides={true}
             spaceBetween={50}
             grabCursor={true}

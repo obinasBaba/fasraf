@@ -8,6 +8,7 @@ import Img from './img.png';
 import Img2 from './img_1.png';
 import Img3 from './img_2.png';
 import HeadIcon from './project-header-icon.png';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const images = [Img, Img2, Img3];
 
@@ -45,22 +46,18 @@ const Projects = () => {
     <div className={s.container}>
       <div className={s.wrapper}>
         <header>
-
           <div className={s.icon}>
-            <Image src={HeadIcon} alt='header title icon'/>
+            <Image src={HeadIcon} alt="header title icon" />
           </div>
 
           <Stack gap={2}>
-            <Typography className={s.sub}>
-              4. OUR PROJECTS
-            </Typography>
+            <Typography className={s.sub}>4. OUR PROJECTS</Typography>
 
-            <Typography variant='h2' className={s.title}>
-              Our latest <br/>
+            <Typography variant="h2" className={s.title}>
+              Our latest <br />
               client Projects
             </Typography>
           </Stack>
-
         </header>
 
         <div className={s.content}>
@@ -99,14 +96,16 @@ const Projects = () => {
                         </motion.div>
                       </Stack>
 
-                      <motion.div layout >
+                      <motion.div layout>
                         <IconButton
                           className={clsx([
                             s.icon_btn,
                             idx === activeProject && s.active,
                           ])}
                         >
-                          <div className={s.icon} />
+                          <div className={s.icon}>
+                            <ChevronRight fontSize="large" color="inherit" />
+                          </div>
                         </IconButton>
                       </motion.div>
                     </motion.header>

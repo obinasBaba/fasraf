@@ -32,8 +32,6 @@ const About = () => {
       <div className={s.bg}>
         <SVG
           src={FasrafBgEffect.src}
-          // width={1128}
-          // height="auto"
           title="React"
           cacheRequests={false}
           loader={<h1>this is loading</h1>}

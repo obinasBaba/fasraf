@@ -1,19 +1,11 @@
 import React from 'react';
 import s from './hero.module.scss';
 import Image from 'next/image';
-import {Button, Typography} from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Swash from '@/public/assets/hero/swash.png';
 import Shapes1 from '@/public/assets/hero/shaps-1.svg';
 import Shapes2 from '@/public/assets/hero/shapes-2.svg';
 import FasrafTriangle from '@/public/assets/hero/fasraf-logo.png';
-
-
-const FasrafButton = ({text} : any) => (
-  <Button variant="contained" size="large" className={s.fas_btn}>
-    {text}
-  </Button>
-)
-
 
 const Hero = () => {
   return (
@@ -27,7 +19,7 @@ const Hero = () => {
 
       <div className={s.wrapper}>
         <div className={s.typo}>
-          <Typography variant="h1" className={s.big_txt}>
+          <Typography variant="h2" className={s.big_txt}>
             <span className={s.top}>Build the perfect</span>
             <br />
             <span className={s.mid}>
@@ -39,7 +31,7 @@ const Hero = () => {
             <br />
             <span className={s.btom}>Business</span>
           </Typography>
-          <Typography variant='body1' className={s.desc}>
+          <Typography variant="body1" className={s.desc}>
             We understand our customer’s needs and hence our work approach &
             systems will tend to know many things about the project result.
           </Typography>
@@ -58,7 +50,6 @@ const Hero = () => {
           <Image src={FasrafTriangle} alt="fasraf triangle" />
         </div>
       </div>
-
     </div>
   );
 };

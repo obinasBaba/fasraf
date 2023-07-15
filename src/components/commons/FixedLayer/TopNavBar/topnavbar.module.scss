@@ -10,15 +10,20 @@
 
     .wrapper {
       width: 100%;
-      padding: .5rem 3rem;
+      padding: 0 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       max-width: 70rem;
-      margin: 1.5rem auto 0;
-      border: 1px solid #000;
       border-radius: 500px;
-      backdrop-filter: blur(15px);
+      margin: .3rem auto 0;
+
+      @include s.media-breakpoint-up(md){
+        margin: 1.5rem auto 0;
+        border: 1px solid #000;
+        padding: .5rem 3rem;
+        backdrop-filter: blur(15px);
+      }
 
       & > * {
         pointer-events: auto;
@@ -26,10 +31,14 @@
 
       .logo {
         position: relative;
-        max-width: 5rem;
+        max-width: 3rem;
         display: flex;
         gap: 1rem;
         align-items: center;
+
+        @include s.media-breakpoint-up(md){
+          max-width: 5rem;
+        }
 
         .logo_txt{
           color: black;
@@ -44,18 +53,44 @@
       }
 
       .links{
-        display: flex;
+        display: none;
         align-items: center;
         gap: 2rem;
         color: #262626;
       }
 
-      button {
-        font-size: 1.1rem;
-        padding-right: 2.5rem;
-        padding-left: 2.5rem;
-        background-color: s.$clrs-orange;
-        color: white;
+      @include s.media-breakpoint-up(lg){
+        display: flex;
+      }
+
+
+      .contact{
+
+        display: none;
+
+        @include s.media-breakpoint-up(lg){
+          display: block;
+        }
+
+        button {
+          font-size: 1.1rem;
+          padding-right: 2.5rem;
+          padding-left: 2.5rem;
+          background-color: s.$clrs-orange;
+          color: white;
+        }
+      }
+
+      .nav_btn{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #262626;
+        cursor: pointer;
+
+        @include s.media-breakpoint-up(lg){
+          display: none;
+        }
       }
     }
   }

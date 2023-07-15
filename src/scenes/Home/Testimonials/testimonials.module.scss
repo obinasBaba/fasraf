@@ -1,6 +1,6 @@
 @use 'src/styles/index' as s;
 
-.container{
+.container {
   width: 100%;
   margin: 10vmax 0;
 
@@ -8,9 +8,9 @@
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
 
-  & :local{
+  & :local {
 
-    .wrapper{
+    .wrapper {
 
       & > header {
         display: flex;
@@ -18,38 +18,72 @@
         align-items: center;
         max-width: 80rem;
         margin: 0 auto;
+        padding: 1.5rem;
 
-        .icon{
-          height: 6rem;
-          width: 6rem;
+        .icon {
+          height: 5rem;
+          width: 5rem;
           border-radius: 50%;
           background-color: #f5b7ff;
           display: grid;
           place-items: center;
+
+
+          @include s.media-breakpoint-up(md) {
+            height: 6rem;
+            width: 6rem;
+
+          }
         }
 
         .sub {
-          padding: .6rem .5rem;
+          padding: .4rem;
           border-left: 3px solid #FF7448;
           background: linear-gradient(90deg, #FFCCBF 0%, rgba(217, 217, 217, 0.00) 100%);
           text-transform: uppercase;
           letter-spacing: .2rem;
           margin-left: .5rem;
+          font-size: .8rem;
+
+          @include s.media-breakpoint-up(md) {
+            padding: .6rem .5rem;
+            font-size: .8rem;
+          }
         }
 
         .title {
           line-height: 97%;
+
+          br {
+            display: none;
+          }
+
+          @include s.media-breakpoint-up(md) {
+            br {
+              display: block;
+            }
+          }
+
+          @include s.media-breakpoint-down(md) {
+            font-size: 2.5rem;
+
+
+          }
         }
       }
 
       .swiper {
-        padding: 1rem;
+        padding: 1.5rem;
         margin-top: 5rem;
+
+        @include s.media-breakpoint-up(md) {
+          padding: 1rem;
+        }
 
         //border: 1px solid #000;
         //transform: translateX(-10rem);
 
-        .slide{
+        .slide {
           position: relative;
           //border: 2px solid #000;
           padding: .5rem;
@@ -60,31 +94,50 @@
       }
 
 
-
       .card {
-        padding: 3rem;
+        padding: 2.4rem;
         display: flex;
         gap: 2rem;
         border-radius: 1rem;
         flex-flow: column;
         place-items: center;
-        background-image: linear-gradient(166deg, #fff8f8, #f5f7ff);
+        background-image: linear-gradient(166deg, #fff8f8, #e1e4fc);
+        border: 1px solid #e1e4fc;
+        //background-image: linear-gradient(166deg, #fff8f8, #f5f7ff);
 
-        .company_card{
-          padding: 2.5rem;
+        @include s.media-breakpoint-up(md) {
+          padding: 3rem;
+        }
+
+        .company_card {
+          padding: 1.7rem;
           display: flex;
           flex-flow: column;
           gap: 1.5rem;
           background-color: white;
           border-radius: 1rem;
 
-          header{
+          @include s.media-breakpoint-up(md) {
+            padding: 2.5rem;
+          }
+
+          header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            .stars {
+              display: flex;
+
+              img {
+                max-width: 1rem;
+              }
+
+            }
+
           }
 
-          .say{
+          .say {
             max-width: 40ch;
             font-size: 1.1rem;
             color: #2c2c2c;
@@ -93,14 +146,14 @@
           }
         }
 
-        .profile{
+        .profile {
           display: flex;
           align-items: center;
           gap: 1rem;
           width: 100%;
           margin-left: 2rem;
 
-          .pp{
+          .pp {
             display: block;
             border-radius: 50%;
             max-width: 3.5rem;

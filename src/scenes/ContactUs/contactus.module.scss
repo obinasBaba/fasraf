@@ -3,6 +3,7 @@
 .container {
   width: 100%;
   margin: 8vmax 0;
+  padding: 1.5rem;
 
   & :local {
 
@@ -16,6 +17,7 @@
         grid-auto-flow: row;
         gap: 1rem;
         place-items: center;
+        text-align: center;
 
         .icon {
           padding: 1rem;
@@ -34,11 +36,15 @@
 
       .cards {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         flex-wrap: wrap;
         gap: 2rem;
         margin: 5rem auto 0;
         width: max-content;
+
+        @include s.media-breakpoint-up(md) {
+          grid-template-columns: 1fr 1fr
+        }
 
         //border: 1px solid #000;
 
@@ -82,7 +88,7 @@
 
       form {
         margin: 5rem auto 0;
-        padding: 5rem;
+        padding: 4rem 2rem;
         max-width: 50rem;
         display: flex;
         flex-flow: column;
@@ -95,6 +101,10 @@
           max-width: 13rem;
           margin: 3rem auto 0;
           width: 100%;
+        }
+
+        @include s.media-breakpoint-up(md) {
+          padding: 5rem;
         }
       }
     }

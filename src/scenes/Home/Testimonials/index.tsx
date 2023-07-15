@@ -51,9 +51,9 @@ const Testimonials = () => {
           // dragMomentum={false}
         >
           <Swiper
-            loop
+            // loop
             slidesPerView={'auto'}
-            centeredSlides={true}
+            // centeredSlides={true}
             spaceBetween={50}
             grabCursor={true}
             modules={[Scrollbar, Navigation]}

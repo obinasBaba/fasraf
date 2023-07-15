@@ -40,7 +40,9 @@ const ContactUs = () => {
             Contact Us
           </Typography>
 
-          <Typography variant="h4">Let's talk about your Business</Typography>
+          <Typography variant="h4">
+            Let&apos;s talk about your Business
+          </Typography>
         </header>
 
         <div className={s.cards}>
@@ -88,7 +90,11 @@ const ContactUs = () => {
 
             <Stack sx={{ width: '100%' }}>
               <FormLabel>Subject</FormLabel>
-              <TextField placeholder="how can we help" variant="outlined" fullWidth />
+              <TextField
+                placeholder="how can we help"
+                variant="outlined"
+                fullWidth
+              />
             </Stack>
           </Stack>
 

@@ -31,6 +31,7 @@
     "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "5.12.2",
+    "axios": "1.4.0",
     "clsx": "1.2.1",
     "color2k": "^2.0.2",
     "framer-motion": "^10.12.5",

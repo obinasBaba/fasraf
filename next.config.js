@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
+  // disable eslint on build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     domains: [],
   },

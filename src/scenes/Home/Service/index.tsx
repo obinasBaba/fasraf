@@ -4,9 +4,14 @@ import { Stack, Typography } from '@mui/material';
 import SVG from 'react-inlinesvg';
 import HeaderIcon from './service-header-icon.svg';
 import LottiIcon from '@/scenes/Home/Service/LottiIcon';
-import { services } from '@/scenes/Home/Service/data';
+import { services as sData } from '@/scenes/Home/Service/data';
 
-const Service = () => {
+type Props = {
+  services: any[];
+};
+
+const Service = ({ services }: Props) => {
+
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
@@ -29,10 +34,12 @@ const Service = () => {
           {services.map((services, idx) => (
             <li className={s.card} key={idx}>
               <div className={s.icon}>
-                <LottiIcon name={services.title} icon={services.icon} />
+                <LottiIcon name={services.title} icon={sData[idx].icon} />
               </div>
-              <Typography variant="h5" className={s.title}>{services.title}</Typography>
-              <Typography variant="body1">{services.body}</Typography>
+              <Typography variant="h5" className={s.title}>
+                {services.title}
+              </Typography>
+              <Typography variant="body1">{services.description}</Typography>
             </li>
           ))}
         </ul>

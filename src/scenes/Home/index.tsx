@@ -6,13 +6,17 @@ import Service from '@/scenes/Home/Service';
 import Projects from '@/scenes/Home/Projects';
 import Testimonials from '@/scenes/Home/Testimonials';
 
-const Home = () => {
+type Props = {
+  pageData: { projects: any[]; services: any[] };
+};
+
+const Home = ({ pageData }: Props) => {
   return (
     <div className={s.container}>
       <Hero />
       <About />
-      <Service />
-      <Projects />
+      <Service services={pageData.services} />
+      <Projects projects={pageData.projects} />
       <Testimonials />
     </div>
   );

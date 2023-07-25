@@ -50,8 +50,8 @@ const Footer = () => {
             </Typography>
 
             <div className={s.socials}>
-              {socials.map((Icon) => (
-                <IconButton key={Icon.muiName}>
+              {socials.map((Icon, idx) => (
+                <IconButton key={idx}>
                   <Icon fontSize="large" />
                 </IconButton>
               ))}

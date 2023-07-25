@@ -9,7 +9,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: [],
+    domains: ['localhost'],
   },
   modularizeImports: {
     '@mui/material': {

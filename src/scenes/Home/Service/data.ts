@@ -1,9 +1,10 @@
-import build from './build.json'
-import design from './design.json'
-import prototype from './prototype.json'
-import align from './align.json'
-import wallet from './122832-wallet.json'
-import note from './8026-taking-notes.json'
+import build from './build.json';
+import design from './design.json';
+import prototype from './prototype.json';
+import align from './align.json';
+import wallet from './122832-wallet.json';
+import note from './8026-taking-notes.json';
+
 export const services = [
   {
     icon: build,

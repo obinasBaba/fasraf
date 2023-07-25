@@ -27,7 +27,6 @@ const theme = createTheme({
           boxShadow: '.5rem .5rem rgba(241, 102, 51, 0.2);',
           ':hover': {
             boxShadow: '.4rem .4rem rgba(241, 102, 51, 0.2);',
-            // transform: 'translateY(-.2rem)',
           },
         },
 

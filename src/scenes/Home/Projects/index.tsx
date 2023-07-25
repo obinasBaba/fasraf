@@ -9,6 +9,7 @@ import Img2 from './img_1.png';
 import Img3 from './img_2.png';
 import HeadIcon from './project-header-icon.png';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { getStrapiMedia } from '@/lib/strapi';
 
 const images = [Img, Img2, Img3];
 
@@ -39,8 +40,14 @@ const basicVariant: Variants = {
   },
 };
 
-const Projects = () => {
+type Props = {
+  projects: any[];
+};
+
+const Projects = ({ projects }: Props) => {
   const [activeProject, setActiveProject] = useState(0);
+
+  console.log('projects', projects);
 
   return (
     <div className={s.container}>
@@ -62,72 +69,70 @@ const Projects = () => {
 
         <div className={s.content}>
           <motion.ul className={s.projects} layout>
-            {Array.from({ length: 3 })
-              .fill(projects[0])
-              .map((p: any, idx) => (
-                <motion.li
-                  className={s.project_card}
-                  key={idx}
-                  onClick={() => setActiveProject(idx)}
-                  layout
-                >
-                  <LayoutGroup>
-                    <motion.header layout="position">
-                      <Stack>
-                        <AnimatePresence mode="popLayout">
-                          {idx === activeProject && (
-                            <motion.div
-                              variants={basicVariant}
-                              initial="initial"
-                              animate="animate"
-                              exit="exit"
-                              layout
-                            >
-                              <Typography className={s.sub}>
-                                Branding / Marketing
-                              </Typography>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                        <motion.div layout>
-                          <Typography variant="h5" className={s.title}>
-                            Experiential Marketing
-                          </Typography>
-                        </motion.div>
-                      </Stack>
-
+            {projects.map((project: any, idx) => (
+              <motion.li
+                className={s.project_card}
+                key={idx}
+                onClick={() => setActiveProject(idx)}
+                layout
+              >
+                <LayoutGroup>
+                  <motion.header layout="position">
+                    <Stack>
+                      <AnimatePresence mode="popLayout">
+                        {idx === activeProject && (
+                          <motion.div
+                            variants={basicVariant}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            layout
+                          >
+                            <Typography className={s.sub}>
+                              {project.tag}
+                            </Typography>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                       <motion.div layout>
-                        <IconButton
-                          className={clsx([
-                            s.icon_btn,
-                            idx === activeProject && s.active,
-                          ])}
-                        >
-                          <div className={s.icon}>
-                            <ChevronRight fontSize="large" color="inherit" />
-                          </div>
-                        </IconButton>
+                        <Typography variant="h5" className={s.title}>
+                          {project.title}
+                        </Typography>
                       </motion.div>
-                    </motion.header>
+                    </Stack>
 
-                    <AnimatePresence mode="popLayout">
-                      {idx === activeProject && (
-                        <motion.div
-                          variants={basicVariant}
-                          initial="initial"
-                          animate="animate"
-                          exit="exit"
-                          layout
-                        >
-                          <Typography className={s.desc}>
-                            {p.description}
-                          </Typography>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </LayoutGroup>
-                </motion.li>
-              ))}
+                    <motion.div layout>
+                      <IconButton
+                        className={clsx([
+                          s.icon_btn,
+                          idx === activeProject && s.active,
+                        ])}
+                      >
+                        <div className={s.icon}>
+                          <ChevronRight fontSize="large" color="inherit" />
+                        </div>
+                      </IconButton>
+                    </motion.div>
+                  </motion.header>
+
+                  <AnimatePresence mode="popLayout">
+                    {idx === activeProject && (
+                      <motion.div
+                        variants={basicVariant}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        layout
+                      >
+                        <Typography className={s.desc}>
+                          {project.description}
+                        </Typography>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </LayoutGroup>
+              </motion.li>
+            ))}
           </motion.ul>
 
           <div className={s.thumbnail}>
@@ -140,7 +145,13 @@ const Projects = () => {
                 exit="exit"
                 // layout
               >
-                <Image src={images[activeProject]} alt="project thumbnail" />
+               <div className={s.img}>
+                 <Image
+                   src={getStrapiMedia(projects[activeProject].thumbnail)}
+                   alt="project thumbnail"
+                   fill
+                 />
+               </div>
               </motion.div>
             </AnimatePresence>
           </div>

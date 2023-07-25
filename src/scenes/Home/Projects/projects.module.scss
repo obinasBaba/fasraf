@@ -74,10 +74,24 @@
 
           order: 1;
 
-          img {
-            display: block;
-            border-radius: 1rem;
+          .img{
+            position: relative;
+            width: 75vw;
+            height: 23vmax;
+
+            @include s.media-breakpoint-up(md){
+              width: 20vmax;
+              height: 20vmax;
+            }
+
+            img {
+              width: 100%;
+              display: block;
+              object-fit: cover;
+              border-radius: 1rem;
+            }
           }
+
         }
       }
 

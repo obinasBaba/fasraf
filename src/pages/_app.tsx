@@ -4,7 +4,7 @@ import Layout from '@/components/commons/layout';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '@/createEmotoinCache';
 import RouteChangeEvent from '@/util/helpers/RouteChangeEvent';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { CssBaseline } from '@mui/material';
 import ThemeProvider from '@mui/system/ThemeProvider';
@@ -53,7 +53,8 @@ export default function MyApp({
       <CacheProvider value={emotionCache}>
         <Head>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
-          <title>Rahove . Portfolio</title>
+          <title>Fasraf . Business . Solution</title>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />

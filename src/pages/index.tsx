@@ -29,6 +29,7 @@ export async function getStaticProps() {
         projects: projects.projects,
         services: services.services,
       },
+      revalidate: 60 * 3,
     },
   };
 }

@@ -64,13 +64,17 @@ const Footer = () => {
           <Image src={Phone} alt="phone" />
           <Stack gap={2} alignItems="center">
             <Typography variant="h4">Get In Touch</Typography>
-            <Button variant="contained" size="large">
-              +251 92336 5539
-            </Button>
+            <Link href="tel:+251 912 611 477">
+              <Button variant="contained" size="large">
+                +251 912 611 477
+              </Button>
+            </Link>
 
-            <Button variant="text" className={s.email}>
-              henzzo@gmail.com
-            </Button>
+            <Link href="mailto:giulianofcb@gmail.com">
+              <Button variant="text" className={s.email}>
+                giulianofcb@gmail.com
+              </Button>
+            </Link>
           </Stack>
         </div>
 

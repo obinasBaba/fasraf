@@ -13,6 +13,7 @@ import {
   Twitter,
   WhatsApp,
 } from '@mui/icons-material';
+import Link from 'next/link';
 
 const socials = [Twitter, Facebook, WhatsApp, Instagram, LinkedIn];
 
@@ -79,10 +80,19 @@ const Footer = () => {
             <Typography gutterBottom variant="h4">
               Pages
             </Typography>
-            <Typography>Home</Typography>
-            <Typography>Contact</Typography>
-            <Typography>Service</Typography>
-            <Typography>Projects</Typography>
+            <Link href="/">
+              <Typography>Home</Typography>
+            </Link>
+
+            <Link href="/contact">
+              <Typography>Contact</Typography>
+            </Link>
+            <Link href="#services">
+              <Typography>Service</Typography>
+            </Link>
+            <Link href="#projects">
+              <Typography>Projects</Typography>
+            </Link>
           </Stack>
         </div>
       </div>

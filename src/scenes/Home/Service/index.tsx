@@ -11,9 +11,8 @@ type Props = {
 };
 
 const Service = ({ services }: Props) => {
-
   return (
-    <div className={s.container}>
+    <section id="services" className={s.container}>
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>
@@ -44,7 +43,7 @@ const Service = ({ services }: Props) => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

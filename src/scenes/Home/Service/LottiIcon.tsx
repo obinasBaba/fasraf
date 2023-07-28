@@ -14,7 +14,7 @@ const LottiIcon = ({ name, icon }: any) => {
     lottiRef.current = Lotti.loadAnimation({
       name,
       container: containerRef.current!,
-      renderer: 'canvas',
+      renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: icon, // path: buildPath.src,

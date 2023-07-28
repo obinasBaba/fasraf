@@ -98,11 +98,11 @@
       margin: 0 auto;
       width: 100%;
       display: grid;
-      gap: s.fluid-size(2rem);
+      gap: s.fluid-size(4rem);
       grid-template-columns: 1fr;
       justify-content: space-between;
       align-items: center;
-      padding: 0 1.5rem;
+      padding: 14vmax 1.5rem;
 
       //border: 1px solid #000;
 
@@ -114,9 +114,10 @@
         max-width: 85%;
         grid-template-columns: 1fr 1fr;
         gap: 0;
+
       }
 
-      @include s.media-breakpoint-up(lg) {
+      @include s.media-breakpoint-up(xxl) {
         max-width: 90rem;
         padding: 0;
       }
@@ -185,10 +186,9 @@
 
       .fasraf_triangle {
         justify-self: end;
-        max-width: 80%;
+        max-width: 90%;
         margin: 0 auto;
         grid-area: 1/1/2/2;
-        //margin-top: -2rem;
 
 
         @include s.media-breakpoint-up(md) {

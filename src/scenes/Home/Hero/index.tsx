@@ -6,6 +6,7 @@ import Swash from '@/public/assets/hero/swash.png';
 import Shapes1 from '@/public/assets/hero/shaps-1.svg';
 import Shapes2 from '@/public/assets/hero/shapes-2.svg';
 import FasrafTriangle from '@/public/assets/hero/fasraf-logo.png';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -36,13 +37,19 @@ const Hero = () => {
             systems will tend to know many things about the project result.
           </Typography>
           <div className={s.cta}>
-            <Button variant="contained" size="large">
-              Contact
-            </Button>
+            <Link href="/contact">
+              <Button variant="contained" size="large">
+                Contact
+              </Button>
+            </Link>
 
-            <Button variant="outlined" size="large">
-              Projects
-            </Button>
+            <Link href="#projects">
+              <Button variant="outlined" size="large">
+                Projects
+              </Button>
+            </Link>
+
+
           </div>
         </div>
 

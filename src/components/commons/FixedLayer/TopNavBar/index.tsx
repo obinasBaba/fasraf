@@ -54,9 +54,6 @@ export default function TopNavBar() {
             </Button>
           </Link>
 
-          <IconButton className={s.nav_btn} size="large">
-            <Dehaze fontSize='large' />
-          </IconButton>
         </div>
       </nav>
     </HideOnScroll>

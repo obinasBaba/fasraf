@@ -13,7 +13,23 @@ import { getStrapiMedia } from '@/lib/strapi';
 
 const images = [Img, Img2, Img3];
 
-const projects = [
+const localProjects = [
+  {
+    title: 'Project 1',
+    subTitle: 'Project 1',
+    description: `It can be difficult to know when
+     SEO changes will translate
+    into benefits, especially due to impediments such
+     as websites that have been penalized.`,
+  },
+  {
+    title: 'Project 1',
+    subTitle: 'Project 1',
+    description: `It can be difficult to know when
+     SEO changes will translate
+    into benefits, especially due to impediments such
+     as websites that have been penalized.`,
+  },
   {
     title: 'Project 1',
     subTitle: 'Project 1',
@@ -50,7 +66,7 @@ const Projects = ({ projects }: Props) => {
   console.log('projects', projects);
 
   return (
-    <div className={s.container}>
+    <section id="projects" className={s.container}>
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>
@@ -145,19 +161,20 @@ const Projects = ({ projects }: Props) => {
                 exit="exit"
                 // layout
               >
-               <div className={s.img}>
-                 <Image
-                   src={getStrapiMedia(projects[activeProject].thumbnail)}
-                   alt="project thumbnail"
-                   fill
-                 />
-               </div>
+                <div className={s.img}>
+                  <Image
+                    src={getStrapiMedia(projects[activeProject].thumbnail)}
+                    // src={images[activeProject]}
+                    alt="project thumbnail"
+                    fill
+                  />
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

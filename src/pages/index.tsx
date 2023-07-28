@@ -1,6 +1,4 @@
-import Head from 'next/head';
 import HomePage from '@/scenes/Home';
-import { Partytown } from '@builder.io/partytown/react';
 import React from 'react';
 import { Fasraf } from '@/lib/strapi';
 import { InferGetStaticPropsType } from 'next';
@@ -41,8 +39,6 @@ export default function Home({
 
   return (
     <>
-
-
       <HomePage pageData={pageData} />
     </>
   );

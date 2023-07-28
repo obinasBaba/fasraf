@@ -100,10 +100,12 @@
         top: 50%;
         transform: translateY(-40%);
         opacity: .6;
+        pointer-events: none;
 
 
         img {
           display: block;
+          pointer-events: none;
         }
       }
 

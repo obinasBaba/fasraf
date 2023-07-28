@@ -73,15 +73,36 @@
       }
 
       .swiper {
+        position: relative;
         padding: 1.5rem;
         margin-top: 5rem;
+        //overflow-x: visible;
 
         @include s.media-breakpoint-up(md) {
           padding: 1rem;
         }
 
         //border: 1px solid #000;
-        //transform: translateX(-10rem);
+        //transform: translateX(20rem);
+
+        .quote{
+          position: absolute;
+          left: 3%;
+          top: 50%;
+          transform: translateY(-50%);
+          max-width: 25rem;
+          width: 100%;
+          z-index: -1;
+          pointer-events: none;
+
+          svg{
+            //gradient for svg
+          fill: rgba(253, 193, 172, 0.13);
+
+
+          }
+
+        }
 
         .slide {
           position: relative;

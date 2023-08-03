@@ -97,13 +97,19 @@ const About = () => {
           <Chip
             className={s.marquee_chip}
             variant="outlined"
-            label={<Typography>Freelance network</Typography>}
+            label={<Typography>Long-term Relationship</Typography>}
           />
 
           <Chip
             className={s.marquee_chip}
             variant="outlined"
-            label={<Typography>Innovative Approach</Typography>}
+            label={<Typography>Industry Best Practice</Typography>}
+          />
+
+          <Chip
+            className={s.marquee_chip}
+            variant="outlined"
+            label={<Typography>Data-driven Solutions</Typography>}
           />
         </Marquee>
       </div>

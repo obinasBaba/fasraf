@@ -3,11 +3,26 @@ import s from './home.module.scss';
 import Hero from '@/scenes/Home/Hero';
 import About from '@/scenes/Home/About';
 import Service from '@/scenes/Home/Service';
-import Projects from '@/scenes/Home/Projects';
-import Testimonials from '@/scenes/Home/Testimonials';
+import Values from 'src/scenes/Home/Values';
+import Projects from 'src/scenes/Home/Projects';
+
+export type ProjectsType = {
+  title: string;
+  date: string;
+  thumbnail: any;
+  achievements: [
+    {
+      id: number;
+      description: string;
+    },
+  ];
+};
 
 type Props = {
-  pageData: { projects: any[]; services: any[] };
+  pageData: {
+    projects: ProjectsType[];
+    services: { description: string; title: string }[];
+  };
 };
 
 const Home = ({ pageData }: Props) => {
@@ -16,8 +31,8 @@ const Home = ({ pageData }: Props) => {
       <Hero />
       <About />
       <Service services={pageData.services} />
+      <Values  />
       <Projects projects={pageData.projects} />
-      <Testimonials />
     </div>
   );
 };

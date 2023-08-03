@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Lotti, { AnimationDirection, AnimationItem } from "lottie-web";
-import buildPath from './build.json';
+import buildPath from '@/public/assets/lotti/build.json';
 
 const LottiIcon = ({ name, icon }: any) => {
   const lottiRef = useRef<AnimationItem>();

@@ -20,7 +20,7 @@ const Service = ({ services }: Props) => {
           </div>
 
           <Stack>
-            <Typography variant="h6" className={s.sub}>
+            <Typography  className={s.sub}>
               SERVICES
             </Typography>
             <Typography variant="h3" className={s.title}>
@@ -30,7 +30,7 @@ const Service = ({ services }: Props) => {
         </header>
 
         <ul>
-          {services.map((services, idx) => (
+          {sData.map((services, idx) => (
             <li className={s.card} key={idx}>
               <div className={s.icon}>
                 <LottiIcon name={services.title} icon={sData[idx].icon} />

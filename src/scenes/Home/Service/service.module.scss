@@ -27,6 +27,12 @@
         gap: 1rem;
         align-items: center;
 
+        .sub{
+          color: s.$clrs-orange;
+          letter-spacing: .3rem;
+          font-size: .8rem;
+        }
+
         .title {
           font-family: s.$fonts-sofia-pro !important;
 

@@ -7,11 +7,15 @@ import { InferGetStaticPropsType } from 'next';
 export async function getStaticProps() {
   const projects = await Fasraf.get('/project-section', {
     params: {
-      populate: ['project', 'project.thumbnail'],
+      populate: ['project', 'project.achievements', 'project.thumbnail'],
     },
-  }).then((res) => ({
-    projects: res.data.data.attributes.project as any[],
-  }));
+  }).then((res) => {
+    // console.log('project res : ', res.data);
+
+    return res.data.data.attributes.project as any[];
+  });
+
+  // console.log('projects -- ', projects.projects);
 
   const services = await Fasraf.get('/service-section', {
     params: {
@@ -21,11 +25,13 @@ export async function getStaticProps() {
     services: res.data.data.attributes.services as any[],
   }));
 
+  // console.log('services -- ', services);
+
   return {
     props: {
       pageData: {
-        projects: projects.projects,
-        services: services.services,
+        projects: projects,
+        services: services,
       },
       revalidate: 60 * 3,
     },
@@ -39,7 +45,7 @@ export default function Home({
 
   return (
     <>
-      <HomePage pageData={pageData} />
+      <HomePage pageData={pageData as any} />
     </>
   );
 }

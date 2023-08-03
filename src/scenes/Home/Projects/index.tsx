@@ -1,180 +1,144 @@
-import React, { useState } from 'react';
-import s from './projects.module.scss';
-import { IconButton, Stack, Typography } from '@mui/material';
-import { AnimatePresence, LayoutGroup, motion, Variants } from 'framer-motion';
+import React from 'react';
+import s from './testimonials.module.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from 'framer-motion';
+import { Navigation, Scrollbar } from 'swiper';
 import Image from 'next/image';
+import HeadIcon from '@/public/assets/project-header-icon.png';
+import { Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
+import 'swiper/css';
+import {
+  ArrowCircleLeftTwoTone,
+  ArrowCircleRightTwoTone,
+  CalendarMonth,
+  TaskAlt,
+} from '@mui/icons-material';
 import clsx from 'clsx';
-import Img from './img.png';
-import Img2 from './img_1.png';
-import Img3 from './img_2.png';
-import HeadIcon from './project-header-icon.png';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import { getStrapiMedia } from '@/lib/strapi';
+import { ProjectsType } from '@/scenes/Home';
 
-const images = [Img, Img2, Img3];
-
-const localProjects = [
+const TestimonialsData = [
   {
-    title: 'Project 1',
-    subTitle: 'Project 1',
-    description: `It can be difficult to know when
-     SEO changes will translate
-    into benefits, especially due to impediments such
-     as websites that have been penalized.`,
-  },
-  {
-    title: 'Project 1',
-    subTitle: 'Project 1',
-    description: `It can be difficult to know when
-     SEO changes will translate
-    into benefits, especially due to impediments such
-     as websites that have been penalized.`,
-  },
-  {
-    title: 'Project 1',
-    subTitle: 'Project 1',
-    description: `It can be difficult to know when
-     SEO changes will translate
-    into benefits, especially due to impediments such
-     as websites that have been penalized.`,
+    companyName: 'John Doe',
+    icon: '',
+    points: [
+      'Professional team of the Promote Digital Marketing professionals.',
+      'They know what they are doing with the current digital word.',
+      'They know what they are doing with the current digital word.',
+      'They know what they are doing with.',
+    ],
   },
 ];
 
-const basicVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      delay: 0.3,
-    },
-  },
-  exit: {
-    opacity: 0,
-  },
-};
-
 type Props = {
-  projects: any[];
+  projects: ProjectsType[];
 };
 
 const Projects = ({ projects }: Props) => {
-  const [activeProject, setActiveProject] = useState(0);
+  const data = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-  console.log('projects', projects);
+  console.log('projects  :', projects);
 
   return (
-    <section id="projects" className={s.container}>
+    <div className={s.container}>
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>
             <Image src={HeadIcon} alt="header title icon" />
           </div>
 
-          <Stack gap={2}>
-            <Typography className={s.sub}>4. OUR PROJECTS</Typography>
+          <Typography variant="h2" className={s.title}>
+            Client Projects
+          </Typography>
 
-            <Typography variant="h2" className={s.title}>
-              Our latest <br />
-              client Projects
-            </Typography>
+          <Stack direction="row" className={s.nav}>
+            <IconButton color="primary" className={clsx(['left'])}>
+              <ArrowCircleLeftTwoTone fontSize="large" />
+            </IconButton>
+            <IconButton color="primary" className={clsx(['right'])}>
+              <ArrowCircleRightTwoTone fontSize="large" />
+            </IconButton>
           </Stack>
         </header>
 
-        <div className={s.content}>
-          <motion.ul className={s.projects} layout>
-            {projects.map((project: any, idx) => (
-              <motion.li
-                className={s.project_card}
-                key={idx}
-                onClick={() => setActiveProject(idx)}
-                layout
-              >
-                <LayoutGroup>
-                  <motion.header layout="position">
-                    <Stack>
-                      <AnimatePresence mode="popLayout">
-                        {idx === activeProject && (
-                          <motion.div
-                            variants={basicVariant}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            layout
-                          >
-                            <Typography className={s.sub}>
-                              {project.tag}
-                            </Typography>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                      <motion.div layout>
+        <motion.div
+          dragConstraints={{ left: 0, right: 0 }}
+          drag="x"
+          dragSnapToOrigin={true}
+          whileDrag={{ scale: 0.98 }}
+          dragElastic={false}
+          style={{ cursor: 'grab' }}
+          // dragMomentum={false}
+        >
+          <Swiper
+            // loop
+            slidesPerView={3}
+            // centeredSlides={true}
+            spaceBetween={50}
+            grabCursor={true}
+            modules={[Scrollbar, Navigation]}
+            className={s.swiper}
+            navigation={{
+              prevEl: '.left',
+              nextEl: '.right',
+            }}
+            scrollbar={{
+              el: '.swiper-scrollbar',
+              hide: true,
+            }}
+          >
+            <SwiperSlide className={s.slide}>
+              <div className={s.spacer} />
+            </SwiperSlide>
+
+            {projects.map((project, idx) => (
+              <SwiperSlide key={idx} className={s.slide}>
+                <div className={s.card}>
+                  <div className={s.company_card}>
+                    <header className={s.card_header}>
+                      <Stack direction="row" alignItems="center" gap=".3rem">
+                        <div className={s.p_thumbnail}>
+                          <Image src={HeadIcon} alt="header title icon" fill />
+                        </div>
                         <Typography variant="h5" className={s.title}>
                           {project.title}
                         </Typography>
-                      </motion.div>
-                    </Stack>
+                      </Stack>
 
-                    <motion.div layout>
-                      <IconButton
-                        className={clsx([
-                          s.icon_btn,
-                          idx === activeProject && s.active,
-                        ])}
-                      >
-                        <div className={s.icon}>
-                          <ChevronRight fontSize="large" color="inherit" />
-                        </div>
-                      </IconButton>
-                    </motion.div>
-                  </motion.header>
+                      <div className={s.stars}>
+                        <Chip
+                          label={new Date(project.date).toLocaleDateString(
+                            'en-US',
+                            {
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric',
+                            },
+                          )}
+                          variant="outlined"
+                          color="primary"
+                          icon={<CalendarMonth fontSize="small" />}
+                        />
+                      </div>
+                    </header>
+                    <Divider />
 
-                  <AnimatePresence mode="popLayout">
-                    {idx === activeProject && (
-                      <motion.div
-                        variants={basicVariant}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        layout
-                      >
-                        <Typography className={s.desc}>
-                          {project.description}
-                        </Typography>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </LayoutGroup>
-              </motion.li>
-            ))}
-          </motion.ul>
-
-          <div className={s.thumbnail}>
-            <AnimatePresence mode="popLayout">
-              <motion.div
-                key={activeProject}
-                variants={{ ...basicVariant, animate: { opacity: 1 } }}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                // layout
-              >
-                <div className={s.img}>
-                  <Image
-                    src={getStrapiMedia(projects[activeProject].thumbnail)}
-                    // src={images[activeProject]}
-                    alt="project thumbnail"
-                    fill
-                  />
+                    <ul>
+                      {project.achievements.map((item, idx) => (
+                        <li key={idx}>
+                          <TaskAlt fontSize="small" color="primary" />
+                          <Typography variant="body1">{item.description}</Typography>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+              </SwiperSlide>
+            ))}
+            <div className="swiper-scrollbar"></div>
+          </Swiper>
+        </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

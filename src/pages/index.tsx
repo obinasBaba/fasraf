@@ -25,15 +25,22 @@ export async function getStaticProps() {
     services: res.data.data.attributes.services as any[],
   }));
 
-  // console.log('services -- ', services);
+  const models = await Fasraf.get('/business-model', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => res.data.data.attributes.models as any[]);
+
+  console.log('business-model -- ', models);
 
   return {
     props: {
       pageData: {
         projects: projects,
         services: services,
+        models: models,
       },
-      revalidate: 60 * 3,
+      revalidate: 60,
     },
   };
 }

@@ -36,7 +36,7 @@ type Props = {
 const Projects = ({ projects }: Props) => {
   const data = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-  console.log('projects  :', projects);
+  // console.log('projects  :', projects);
 
   return (
     <div className={s.container}>

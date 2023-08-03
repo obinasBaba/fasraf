@@ -81,13 +81,13 @@ const basicVariant: Variants = {
 };
 
 type Props = {
-  projects: any[];
+  models: any[];
 };
 
-const BusinessModel = ({ projects }: Props) => {
+const BusinessModel = ({ models }: Props) => {
   const [activeProject, setActiveProject] = useState(0);
 
-  console.log('projects', projects);
+  console.log('models', models);
 
   return (
     <section id="projects" className={s.container}>
@@ -108,7 +108,7 @@ const BusinessModel = ({ projects }: Props) => {
         <LayoutGroup>
           <motion.div className={s.content} layout="position">
             <motion.ul className={s.projects} layout>
-              {localProjects.slice(0, 3).map((project: any, idx) => (
+              {models.slice(0, 3).map((project: any, idx) => (
                 <motion.li
                   className={s.project_card}
                   key={idx}
@@ -160,7 +160,7 @@ const BusinessModel = ({ projects }: Props) => {
             </motion.ul>
 
             <motion.ul className={s.projects} layout>
-              {localProjects.slice(3, 6).map((project: any, index) => {
+              {models.slice(3, 6).map((project: any, index) => {
                 const idx = index + 3;
                 return (
                   <motion.li

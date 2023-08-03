@@ -22,6 +22,7 @@ type Props = {
   pageData: {
     projects: ProjectsType[];
     services: { description: string; title: string }[];
+    models: any[];
   };
 };
 
@@ -31,7 +32,7 @@ const Home = ({ pageData }: Props) => {
       <Hero />
       <About />
       <Service services={pageData.services} />
-      <Values projects={{} as any} />
+      <Values models={pageData.models} />
       <Projects projects={pageData.projects} />
     </div>
   );

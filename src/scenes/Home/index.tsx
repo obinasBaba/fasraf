@@ -3,7 +3,7 @@ import s from './home.module.scss';
 import Hero from '@/scenes/Home/Hero';
 import About from '@/scenes/Home/About';
 import Service from '@/scenes/Home/Service';
-import Values from 'src/scenes/Home/Values';
+import Values from 'src/scenes/Home/BusinessModel';
 import Projects from 'src/scenes/Home/Projects';
 
 export type ProjectsType = {
@@ -31,7 +31,7 @@ const Home = ({ pageData }: Props) => {
       <Hero />
       <About />
       <Service services={pageData.services} />
-      <Values  />
+      <Values projects={{} as any} />
       <Projects projects={pageData.projects} />
     </div>
   );

@@ -144,7 +144,7 @@
           }
 
           @include s.media-breakpoint-up(md) {
-            padding: 2.5rem;
+            padding: 2rem;
           }
 
           header.card_header {
@@ -183,6 +183,7 @@
 
               p {
                 font-weight: 300;
+                font-size: 1.1rem;
               }
             }
           }

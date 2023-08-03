@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import s from './projects.module.scss';
+import s from './b_model.module.scss';
 import { IconButton, Stack, Typography } from '@mui/material';
 import { AnimatePresence, LayoutGroup, motion, Variants } from 'framer-motion';
 import Image from 'next/image';
@@ -108,7 +108,7 @@ const BusinessModel = ({ projects }: Props) => {
         <LayoutGroup>
           <motion.div className={s.content} layout="position">
             <motion.ul className={s.projects} layout>
-              {localProjects.slice(0,3).map((project: any, idx) => (
+              {localProjects.slice(0, 3).map((project: any, idx) => (
                 <motion.li
                   className={s.project_card}
                   key={idx}
@@ -122,7 +122,6 @@ const BusinessModel = ({ projects }: Props) => {
                           {project.title}
                         </Typography>
                       </motion.div>
-
 
                       <motion.div layout>
                         <IconButton
@@ -161,7 +160,7 @@ const BusinessModel = ({ projects }: Props) => {
             </motion.ul>
 
             <motion.ul className={s.projects} layout>
-              {localProjects.slice(3,6).map((project: any, index) => {
+              {localProjects.slice(3, 6).map((project: any, index) => {
                 const idx = index + 3;
                 return (
                   <motion.li
@@ -177,7 +176,6 @@ const BusinessModel = ({ projects }: Props) => {
                             {project.title}
                           </Typography>
                         </motion.div>
-
 
                         <motion.div layout>
                           <IconButton

@@ -19,15 +19,22 @@
 
       svg {
         position: absolute;
-        top: -30%;
+        top: -20rem;
         margin: 0 auto;
         pointer-events: none;
         width: 100%;
         scale: 1.5;
         //width: 200%;
 
+
+
         @include s.media-breakpoint-up(md) {
           width: 60%;
+          top: -40rem;
+        }
+
+        @include s.media-breakpoint-up(1450px) {
+          top: -20rem;
         }
 
       }
@@ -80,6 +87,7 @@
         .divider {
           //flex: .7;
           width: 100%;
+          flex: .8;
 
           align-self: center;
           //max-width: 50ch;
@@ -89,7 +97,7 @@
             height: 1.1rem;
             border-radius: .2rem;
             background-color: #D9D9D9;
-            max-width: 75%;
+            max-width: 80%;
             margin: 0 auto;
           }
 
@@ -97,7 +105,9 @@
         }
 
         .desc {
-          max-width: 50ch;
+          flex: 1.2;
+          max-width: 54ch;
+          width: 100%;
           font-size: 1.3rem;
           font-weight: 300;
           line-height: 140%;

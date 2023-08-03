@@ -19,7 +19,7 @@
       border-radius: 500px;
       margin: .3rem auto 0;
 
-      @include s.media-breakpoint-up(md){
+      @include s.media-breakpoint-up(md) {
         margin: 1.5rem auto 0;
         border: 3px solid rgba(241, 102, 51, 0.35);
         padding: 1rem 3rem;
@@ -39,45 +39,41 @@
         gap: 1rem;
         align-items: center;
 
-        @include s.media-breakpoint-up(md){
-          max-width: 5rem;
-        }
-
-        .logo_txt{
+        .logo_txt {
           color: black;
           display: flex;
           flex-flow: column;
           gap: .1rem;
 
-          & > *{
+          & > * {
             line-height: 100%;
           }
         }
       }
 
-      .links{
+      .links {
         display: none;
         align-items: center;
         gap: 2rem;
         color: #262626;
       }
 
-      @include s.media-breakpoint-up(lg){
+      @include s.media-breakpoint-up(lg) {
         display: flex;
       }
 
 
-      .contact{
+      .contact {
 
         button {
           background-color: s.$clrs-orange;
           color: white;
         }
 
-        @include s.media-breakpoint-up(lg){
+        @include s.media-breakpoint-up(lg) {
           display: block;
 
-          button{
+          button {
             font-size: 1.1rem;
             padding-right: 2.5rem;
             padding-left: 2.5rem;
@@ -87,14 +83,14 @@
         }
       }
 
-      .nav_btn{
+      .nav_btn {
         display: flex;
         align-items: center;
         gap: 1rem;
         color: #262626;
         cursor: pointer;
 
-        @include s.media-breakpoint-up(lg){
+        @include s.media-breakpoint-up(lg) {
           display: none;
         }
       }

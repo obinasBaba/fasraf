@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './testimonials.module.scss';
+import s from './projects.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import { Navigation, Scrollbar } from 'swiper';
@@ -125,8 +125,10 @@ const Projects = ({ projects }: Props) => {
                     <ul>
                       {project.achievements.map((item, idx) => (
                         <li key={idx}>
-                          <TaskAlt fontSize="small" color="primary" />
-                          <Typography variant="body1">{item.description}</Typography>
+                          <TaskAlt color="primary" />
+                          <Typography variant="body1">
+                            {item.description}
+                          </Typography>
                         </li>
                       ))}
                     </ul>

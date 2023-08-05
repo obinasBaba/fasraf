@@ -13,9 +13,10 @@ export default async function handler(
     // this should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
 
-    console.log('revalidating ---------> ')
+    console.log('revalidating ---------> ');
 
     await res.revalidate('/');
+    await res.revalidate('/contact');
 
     console.log(' 😉 revalidated ---------> ');
 

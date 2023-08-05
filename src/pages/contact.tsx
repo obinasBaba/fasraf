@@ -22,7 +22,7 @@ export async function getStaticProps() {
       pageData: {
         contactData,
       },
-      revalidate: 60,
+      // revalidate: 60,
     },
   };
 }

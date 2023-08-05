@@ -54,9 +54,11 @@ const Footer = ({ footerSection }: Props) => {
           your unique consultation
         </Typography>
 
-        <Button size="large" variant="contained">
-          Let&apos;s Talk
-        </Button>
+        <Link href="/contact">
+          <Button size="large" variant="contained">
+            Let&apos;s Talk
+          </Button>
+        </Link>
       </div>
 
       <div className={s.wrapper}>
@@ -80,7 +82,11 @@ const Footer = ({ footerSection }: Props) => {
 
             <div className={s.socials}>
               {footerSection.socials.map((social, idx) => (
-                <Link href={social.link} key={idx}>
+                <Link href={social.link} key={idx}
+                      target="_blank"
+                      rel="noopener noreferrer"
+
+                >
                   <IconButton color="primary">
                     {socialIcons.get(social.name)?.icon}
                   </IconButton>

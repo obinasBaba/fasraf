@@ -112,15 +112,15 @@
 
       .social {
         display: flex;
-        //flex-flow: column;
+        flex-flow: column;
         gap: 2rem;
         justify-content: center;
         align-items: center;
 
 
-
         @include s.media-breakpoint-up(md) {
           align-items: flex-start;
+          //flex-flow: row;
 
           img{
             //margin-top: -3rem;

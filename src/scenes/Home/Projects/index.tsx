@@ -15,6 +15,7 @@ import {
 } from '@mui/icons-material';
 import clsx from 'clsx';
 import { ProjectsType } from '@/scenes/Home';
+import { getStrapiMedia } from '@/lib/strapi';
 
 const TestimonialsData = [
   {
@@ -36,7 +37,7 @@ type Props = {
 const Projects = ({ projects }: Props) => {
   const data = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-  // console.log('projects  :', projects);
+  console.log('projects  :', projects);
 
   return (
     <div className={s.container} id="projects">
@@ -95,9 +96,13 @@ const Projects = ({ projects }: Props) => {
                 <div className={s.card}>
                   <div className={s.company_card}>
                     <header className={s.card_header}>
-                      <Stack direction="row" alignItems="center" gap=".3rem">
+                      <Stack direction="row" alignItems="center" gap="1rem">
                         <div className={s.p_thumbnail}>
-                          <Image src={HeadIcon} alt="header title icon" fill />
+                          <Image
+                            src={getStrapiMedia(project.thumbnail)}
+                            alt="header title icon"
+                            fill
+                          />
                         </div>
                         <Typography variant="h5" className={s.title}>
                           {project.title}

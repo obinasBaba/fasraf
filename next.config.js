@@ -9,7 +9,11 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['localhost', 'fasraf-dashboard.onrender.com'],
+    domains: [
+      'localhost',
+      'fasraf-dashboard.onrender.com',
+      'res.cloudinary.com',
+    ],
   },
   modularizeImports: {
     '@mui/material': {

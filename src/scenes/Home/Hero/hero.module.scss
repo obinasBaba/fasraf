@@ -152,7 +152,8 @@
 
           @include s.media-breakpoint-up(lg) {
             font-size: 4.3rem;
-            letter-spacing: -.07rem;
+            word-spacing: .3rem;
+            //letter-spacing: -.07rem;
 
           }
 
@@ -186,7 +187,7 @@
           display: flex;
           gap: 2rem;
           align-items: center;
-          //border: 1px solid #000;
+          margin-top: 1rem;
 
         }
       }

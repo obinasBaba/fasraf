@@ -39,7 +39,7 @@ const Projects = ({ projects }: Props) => {
   // console.log('projects  :', projects);
 
   return (
-    <div className={s.container}>
+    <div className={s.container} id='projects'>
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>

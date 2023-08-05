@@ -90,7 +90,7 @@ const BusinessModel = ({ models }: Props) => {
   console.log('models', models);
 
   return (
-    <section id="projects" className={s.container}>
+    <section id="business_model" className={s.container}>
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>

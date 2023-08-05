@@ -8,7 +8,11 @@ import Shapes2 from '@/public/assets/hero/shapes-2.svg';
 import FasrafTriangle from '@/public/assets/hero/fasraf-logo.png';
 import Link from 'next/link';
 
-const Hero = () => {
+type Props = {
+  text: string;
+};
+
+const Hero = ({ text }: Props) => {
   return (
     <div className={s.container}>
       <div className={s.decor_shape_1}>
@@ -21,7 +25,7 @@ const Hero = () => {
       <div className={s.wrapper}>
         <div className={s.typo}>
           <Typography variant="h2" className={s.big_txt}>
-            <span className={s.top}>Build the perfect</span>
+            <span className={s.top}>The perfect</span>
             <br />
             <span className={s.mid}>
               <div className={s.swash}>
@@ -33,23 +37,20 @@ const Hero = () => {
             <span className={s.btom}>Business</span>
           </Typography>
           <Typography variant="body1" className={s.desc}>
-            We understand our customer’s needs and hence our work approach &
-            systems will tend to know many things about the project result.
+            {text}
           </Typography>
           <div className={s.cta}>
-            <Link href="/contact">
-              <Button variant="contained" size="large">
-                Contact
+            <Link href="#business_model">
+              <Button variant="outlined" size="large">
+                Business Model
               </Button>
             </Link>
 
             <Link href="#projects">
-              <Button variant="outlined" size="large">
+              <Button variant="contained" size="large">
                 Projects
               </Button>
             </Link>
-
-
           </div>
         </div>
 

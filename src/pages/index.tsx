@@ -25,17 +25,26 @@ export async function getStaticProps() {
     services: res.data.data.attributes.services as any[],
   }));
 
+  const hero = await Fasraf.get('/front-section', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => res.data.data.attributes.description as string);
+
+  console.log('hero text : ', hero);
+
   const models = await Fasraf.get('/business-model', {
     params: {
       populate: '*',
     },
   }).then((res) => res.data.data.attributes.models as any[]);
 
-  console.log('business-model -- ', models);
+  // console.log('business-model -- ', models);
 
   return {
     props: {
       pageData: {
+        hero,
         projects: projects,
         services: services,
         models: models,
@@ -48,7 +57,7 @@ export async function getStaticProps() {
 export default function Home({
   pageData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log('pageData', pageData);
+  // console.log('pageData', pageData);
 
   return (
     <>

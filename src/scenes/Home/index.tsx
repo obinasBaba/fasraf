@@ -20,6 +20,7 @@ export type ProjectsType = {
 
 type Props = {
   pageData: {
+    hero: string;
     projects: ProjectsType[];
     services: { description: string; title: string }[];
     models: any[];
@@ -29,7 +30,7 @@ type Props = {
 const Home = ({ pageData }: Props) => {
   return (
     <div className={s.container}>
-      <Hero />
+      <Hero text={pageData.hero} />
       <About />
       <Service services={pageData.services} />
       <Values models={pageData.models} />

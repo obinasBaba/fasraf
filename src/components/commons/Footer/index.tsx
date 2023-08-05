@@ -19,24 +19,6 @@ import Link from 'next/link';
 
 const socials = [Twitter, Facebook, WhatsApp, Instagram, LinkedIn];
 
-const socialIcons = new Map([
-  ['twitter', { icon: <Twitter fontSize="large" /> }],
-  [
-    'facebook',
-    {
-      icon: <Facebook fontSize="large" />,
-    },
-  ],
-  ['whatsapp', { icon: <WhatsApp fontSize="large" /> }],
-  [
-    'instagram',
-    {
-      icon: <Instagram fontSize="large" />,
-    },
-  ],
-  ['linkedin', { icon: <LinkedIn fontSize="large" /> }],
-]);
-
 type Props = {
   footerSection: {
     socials: [{ name: string; link: string }];
@@ -46,6 +28,26 @@ type Props = {
 };
 
 const Footer = ({ footerSection }: Props) => {
+  console.log('footer section ---');
+
+  const socialIcons = new Map([
+    ['twitter', { icon: <Twitter fontSize="large" /> }],
+    [
+      'facebook',
+      {
+        icon: <Facebook fontSize="large" />,
+      },
+    ],
+    ['whatsapp', { icon: <WhatsApp fontSize="large" /> }],
+    [
+      'instagram',
+      {
+        icon: <Instagram fontSize="large" />,
+      },
+    ],
+    ['linkedin', { icon: <LinkedIn fontSize="large" /> }],
+  ]);
+
   return (
     <div className={s.container}>
       <div className={s.banner}>

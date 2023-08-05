@@ -67,37 +67,56 @@ const ContactUs = ({ contactData }: Props) => {
                 <div className={s.info}>
                   <EmailOutlined />
                   <Typography variant="h6">Email</Typography>
-                  <Typography variant="body1">{contactData?.email || 'giulianofcb@gmail.com'}</Typography>
+                  <Typography variant="body1">
+                    {contactData?.email || 'giulianofcb@gmail.com'}
+                  </Typography>
                 </div>
               </div>
             </Link>
           </div>
 
           <div className={s.card_wrap}>
-            <Link href={`tel:${contactData?.phone || '+251 912 611 477'}`} style={{ width: '100%' }}>
+            <Link
+              href={`tel:${contactData?.phone || '+251 912 611 477'}`}
+              style={{ width: '100%' }}
+            >
               <div className={s.card}>
                 <Button variant="contained">Call</Button>
                 <Divider />
                 <div className={s.info}>
                   <PhoneOutlined />
                   <Typography variant="h6">Phone</Typography>
-                  <Typography variant="body1">{contactData?.phone || '+251 912 611 477'}</Typography>
+                  <Typography variant="body1">
+                    {contactData?.phone || '+251 912 611 477'}
+                  </Typography>
                 </div>
               </div>
             </Link>
           </div>
         </div>
 
-        <form>
+        <form
+          action="https://formsubmit.co/fasrafadvisory@gmail.com"
+          method="POST"
+        >
           <Stack direction="row" gap={2}>
             <Stack sx={{ width: '100%' }}>
               <FormLabel>Full Name</FormLabel>
-              <TextField placeholder="your name" variant="outlined" fullWidth />
+              <TextField
+                required
+                name="fullName"
+                placeholder="your name"
+                variant="outlined"
+                fullWidth
+              />
             </Stack>
 
             <Stack sx={{ width: '100%' }}>
               <FormLabel>Your Email</FormLabel>
               <TextField
+                required
+                type="email"
+                name="email"
                 placeholder="example@youmail.com"
                 variant="outlined"
                 fullWidth
@@ -109,6 +128,8 @@ const ContactUs = ({ contactData }: Props) => {
             <Stack sx={{ width: '100%' }}>
               <FormLabel>Company</FormLabel>
               <TextField
+                name="company"
+                type="text"
                 placeholder="your company name here"
                 variant="outlined"
                 fullWidth
@@ -118,6 +139,9 @@ const ContactUs = ({ contactData }: Props) => {
             <Stack sx={{ width: '100%' }}>
               <FormLabel>Subject</FormLabel>
               <TextField
+                required
+                name="subject"
+                type="text"
                 placeholder="how can we help"
                 variant="outlined"
                 fullWidth
@@ -128,7 +152,10 @@ const ContactUs = ({ contactData }: Props) => {
           <Stack sx={{ width: '100%' }}>
             <FormLabel>Message</FormLabel>
             <TextField
+              required
               multiline
+              name="message"
+              type="text"
               rows={4}
               placeholder="hello there, I whold like to talk about how to...."
               variant="outlined"
@@ -136,7 +163,7 @@ const ContactUs = ({ contactData }: Props) => {
             />
           </Stack>
 
-          <Button variant="contained" size="large">
+          <Button variant="contained" size="large" type="submit">
             Send
           </Button>
         </form>

@@ -21,9 +21,7 @@ export async function getStaticProps() {
     params: {
       populate: ['services'],
     },
-  }).then((res) => ({
-    services: res.data.data.attributes.services as any[],
-  }));
+  }).then((res) => res.data.data.attributes.services as any[]);
 
   const hero = await Fasraf.get('/front-section', {
     params: {
@@ -69,13 +67,13 @@ export async function getStaticProps() {
     props: {
       pageData: {
         hero,
+        services,
         projects: projects,
-        services: services,
         models: models,
         aboutSection,
         footerSection,
       },
-      revalidate: 60,
+      // revalidate: 60,
     },
   };
 }

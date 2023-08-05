@@ -5,12 +5,15 @@ import SVG from 'react-inlinesvg';
 import HeaderIcon from './service-header-icon.svg';
 import LottiIcon from '@/scenes/Home/Service/LottiIcon';
 import { services as sData } from '@/scenes/Home/Service/data';
+import clsx from 'clsx';
 
 type Props = {
   services: any[];
 };
 
 const Service = ({ services }: Props) => {
+  console.log('services : ', services);
+
   return (
     <section id="services" className={s.container}>
       <div className={s.wrapper}>
@@ -20,9 +23,7 @@ const Service = ({ services }: Props) => {
           </div>
 
           <Stack>
-            <Typography  className={s.sub}>
-              SERVICES
-            </Typography>
+            <Typography className={s.sub}>SERVICES</Typography>
             <Typography variant="h3" className={s.title}>
               WHAT WE OFFER
             </Typography>
@@ -30,9 +31,14 @@ const Service = ({ services }: Props) => {
         </header>
 
         <ul>
-          {sData.map((services, idx) => (
+          {services.map((services, idx) => (
             <li className={s.card} key={idx}>
-              <div className={s.icon}>
+              <div
+                className={clsx([
+                  s.icon,
+                  services.title.toLowerCase().includes('risk') && s.risk,
+                ])}
+              >
                 <LottiIcon name={services.title} icon={sData[idx].icon} />
               </div>
               <Typography variant="h5" className={s.title}>

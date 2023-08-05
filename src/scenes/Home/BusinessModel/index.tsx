@@ -87,7 +87,7 @@ type Props = {
 const BusinessModel = ({ models }: Props) => {
   const [activeProject, setActiveProject] = useState(0);
 
-  console.log('models', models);
+  // console.log('models', models);
 
   return (
     <section id="business_model" className={s.container}>

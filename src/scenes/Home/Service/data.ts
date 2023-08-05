@@ -4,6 +4,8 @@ import prototype from '@/public/assets/lotti/prototype.json';
 import align from '@/public/assets/lotti/align.json';
 import wallet from '@/public/assets/lotti/122832-wallet.json';
 import note from '@/public/assets/lotti/8026-taking-notes.json';
+import manage from '@/public/assets/lotti/manage.json';
+import risk from '@/public/assets/lotti/risk2.json';
 import rocket from '@/public/assets/lotti/illustrations_rocket.json';
 
 export const services = [
@@ -47,22 +49,25 @@ export const services = [
     description: `We help entrepreneurs and ventures in developing
      informative concept note on envisaged business ideas.`,
   },
+
+
+
   {
-    icon: wallet,
-    title: 'Financial Management',
+    icon: manage,
+    title: 'Operations Management',
     description: `We provide financial management consulting
     services to help businesses optimize their financial performance. We offer services such as financial analysis, budgeting and forecasting, and cash flow management.`,
   },
   {
-    icon: design,
-    title: 'Training and Development ',
+    icon: rocket,
+    title: 'Marketing and Communication',
     description: `Fasraf Trading PLC also offers training and
     development programs to help businesses improve
     their capabilities and competitiveness. Some of the topics are the following: Sales management, Marketing and Branding, Human capital management, etc`,
   },
   {
-    icon: rocket,
-    title: 'Concept Note Development',
+    icon: risk,
+    title: 'Risk Management and Insurance',
     description: `We help entrepreneurs and ventures in developing
      informative concept note on envisaged business ideas.`,
   },

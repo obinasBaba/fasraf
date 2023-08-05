@@ -43,6 +43,8 @@
       align-items: center;
       justify-content: space-between;
       top: 3rem;
+      z-index: 3;
+
 
       & > :first-child {
         font-family: s.$fonts-sofia-pro !important;
@@ -65,8 +67,9 @@
 
 
       @include s.media-breakpoint-up(md) {
-        padding: 6rem;
-        top: 0;
+        padding: 3rem;
+        top: 5rem;
+        opacity: .8;
 
         button {
           font-size: 1.3rem;
@@ -163,7 +166,7 @@
           max-width: 40ch;
           color: #d0d0d0;
           font-weight: 300;
-          font-size: 1.1rem;
+          font-size: 1.3rem;
         }
       }
 

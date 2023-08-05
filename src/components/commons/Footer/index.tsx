@@ -77,20 +77,21 @@ const Footer = ({ footerSection }: Props) => {
             </Stack>
 
             <Typography className={s.desc}>
-              Customer Centric Approach
+              Customer Centric Approach !
             </Typography>
 
             <div className={s.socials}>
               {footerSection.socials.map((social, idx) => (
-                <Link href={social.link} key={idx}
-                      target="_blank"
-                      rel="noopener noreferrer"
-
+                <a
+                  href={social.link}
+                  key={idx}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <IconButton color="primary">
                     {socialIcons.get(social.name)?.icon}
                   </IconButton>
-                </Link>
+                </a>
               ))}
             </div>
           </Stack>

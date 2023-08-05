@@ -84,16 +84,11 @@ const Footer = ({ footerSection }: Props) => {
 
             <div className={s.socials}>
               {footerSection.socials.map((social, idx) => (
-                <a
-                  href={social.link}
-                  key={idx}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link key={idx} href={social.link} passHref>
                   <IconButton color="primary">
                     {socialIcons.get(social.name)?.icon}
                   </IconButton>
-                </a>
+                </Link>
               ))}
             </div>
           </Stack>

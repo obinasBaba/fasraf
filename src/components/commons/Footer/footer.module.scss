@@ -5,7 +5,8 @@
   width: 100%;
   overflow: hidden;
   z-index: 1;
-  margin-top: 10vmax;
+  margin-top: 20vmax;
+
 
   &::after {
     content: '';
@@ -84,7 +85,7 @@
       align-items: start;
       gap: 4rem;
       height: 100%;
-      padding: 25vmax 0 10vmax;
+      padding: 25vmax 0 4vmax;
       color: white;
 
       @include s.media-breakpoint-up(md) {
@@ -111,14 +112,19 @@
 
       .social {
         display: flex;
-        flex-flow: column;
+        //flex-flow: column;
         gap: 2rem;
         justify-content: center;
         align-items: center;
 
 
+
         @include s.media-breakpoint-up(md) {
           align-items: flex-start;
+
+          img{
+            //margin-top: -3rem;
+          }
         }
 
         @include s.media-breakpoint-down(md) {
@@ -136,7 +142,7 @@
           width: 100%;
 
           @include s.media-breakpoint-up(md) {
-            max-width: 3rem;
+            max-width: 2.5rem;
           }
         }
 
@@ -164,7 +170,7 @@
       .contact {
         display: flex;
         align-items: flex-start;
-        //gap: .5rem;
+        gap: 1.5rem;
 
         img {
           margin-top: .5rem;
@@ -183,7 +189,7 @@
         align-items: flex-start;
 
         @include s.media-breakpoint-up(md) {
-          display: block;
+          display: flex;
         }
 
       }

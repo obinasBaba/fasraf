@@ -10,6 +10,8 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
+  Mail,
+  Phonelink,
   Twitter,
   WhatsApp,
 } from '@mui/icons-material';
@@ -17,7 +19,33 @@ import Link from 'next/link';
 
 const socials = [Twitter, Facebook, WhatsApp, Instagram, LinkedIn];
 
-const Footer = () => {
+const socialIcons = new Map([
+  ['twitter', { icon: <Twitter fontSize="large" /> }],
+  [
+    'facebook',
+    {
+      icon: <Facebook fontSize="large" />,
+    },
+  ],
+  ['whatsapp', { icon: <WhatsApp fontSize="large" /> }],
+  [
+    'instagram',
+    {
+      icon: <Instagram fontSize="large" />,
+    },
+  ],
+  ['linkedin', { icon: <LinkedIn fontSize="large" /> }],
+]);
+
+type Props = {
+  footerSection: {
+    socials: [{ name: string; link: string }];
+    phone: string;
+    email: string;
+  };
+};
+
+const Footer = ({ footerSection }: Props) => {
   return (
     <div className={s.container}>
       <div className={s.banner}>
@@ -47,14 +75,16 @@ const Footer = () => {
             </Stack>
 
             <Typography className={s.desc}>
-              Lorem ipsum dolor sit amet consectetur. Tortor in egestas risus
+              Customer Centric Approach
             </Typography>
 
             <div className={s.socials}>
-              {socials.map((Icon, idx) => (
-                <IconButton key={idx}>
-                  <Icon fontSize="large" />
-                </IconButton>
+              {footerSection.socials.map((social, idx) => (
+                <Link href={social.link} key={idx}>
+                  <IconButton color="primary">
+                    {socialIcons.get(social.name)?.icon}
+                  </IconButton>
+                </Link>
               ))}
             </div>
           </Stack>
@@ -62,17 +92,33 @@ const Footer = () => {
 
         <div className={s.contact}>
           <Image src={Phone} alt="phone" />
-          <Stack gap={2} alignItems="center">
+          <Stack gap={2}>
             <Typography variant="h4">Get In Touch</Typography>
-            <Link href="tel:+251 912 611 477">
-              <Button variant="contained" size="large">
-                +251 912 611 477
+            <Link
+              href={`tel:${footerSection?.phone || '+251 912 611 477'}`}
+              style={{ width: '100%' }}
+            >
+              <Button
+                startIcon={<Phonelink />}
+                variant="contained"
+                size="large"
+                fullWidth
+              >
+                {footerSection?.phone || '+251 912 611 477'}
               </Button>
             </Link>
 
-            <Link href="mailto:giulianofcb@gmail.com">
-              <Button variant="text" className={s.email}>
-                giulianofcb@gmail.com
+            <Link
+              href={`mailto:${footerSection?.email || 'giulianofcb@gmail.com'}`}
+              style={{ width: '100%' }}
+            >
+              <Button
+                startIcon={<Mail />}
+                variant="outlined"
+                className={s.email}
+                fullWidth
+              >
+                {footerSection?.email || 'giulianofcb@gmail.com'}
               </Button>
             </Link>
           </Stack>

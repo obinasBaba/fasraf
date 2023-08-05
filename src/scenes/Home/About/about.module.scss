@@ -27,7 +27,6 @@
         //width: 200%;
 
 
-
         @include s.media-breakpoint-up(md) {
           width: 60%;
           top: -40rem;
@@ -144,6 +143,12 @@
           align-items: center;
           text-align: center;
 
+          .icon {
+            max-width: 10rem;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+
           .title {
             font-family: s.$fonts-sofia-pro-soft !important;
             color: s.$clrs-grey-txt;
@@ -159,9 +164,7 @@
       }
 
       .marquee {
-        width: calc(100% + 15rem);
-
-
+        width: calc(100% + 20rem);
         margin-top: 7rem;
 
         @include s.media-breakpoint-up(md) {
@@ -186,7 +189,8 @@
         p {
           font-size: 1.4rem;
           font-weight: 300;
-          color: #595959;
+          //color: #595959 !important;
+          color: #e78667 !important;
 
           @include s.media-breakpoint-up(md) {
             font-size: 2.5rem;

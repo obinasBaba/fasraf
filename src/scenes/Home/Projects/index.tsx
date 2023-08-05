@@ -39,7 +39,7 @@ const Projects = ({ projects }: Props) => {
   // console.log('projects  :', projects);
 
   return (
-    <div className={s.container} id='projects'>
+    <div className={s.container} id="projects">
       <div className={s.wrapper}>
         <header>
           <div className={s.icon}>
@@ -103,22 +103,6 @@ const Projects = ({ projects }: Props) => {
                           {project.title}
                         </Typography>
                       </Stack>
-
-                      <div className={s.stars}>
-                        <Chip
-                          label={new Date(project.date).toLocaleDateString(
-                            'en-US',
-                            {
-                              month: 'short',
-                              day: 'numeric',
-                              year: 'numeric',
-                            },
-                          )}
-                          variant="outlined"
-                          color="primary"
-                          icon={<CalendarMonth fontSize="small" />}
-                        />
-                      </div>
                     </header>
                     <Divider />
 

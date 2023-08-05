@@ -3,9 +3,10 @@ import s from './about.module.scss';
 import SVG from 'react-inlinesvg';
 import { Chip, Typography } from '@mui/material';
 import FasrafBgEffect from './fasraf-bg-effect.svg';
-import StartUpIcon from './startup-svg.svg';
-import CorporateIcon from './corporate-svg.svg';
+import StartUpIcon from './msme.png';
+import CorporateIcon from './img.png';
 import Marquee from 'react-fast-marquee';
+import Image from 'next/image';
 
 const message = [
   {
@@ -18,7 +19,7 @@ const message = [
   },
   {
     icon: CorporateIcon,
-    title: 'For Corporates-Ups',
+    title: 'For Corporates',
     message: `We are a full-service digital agency that builds
      immersive user experience. Our team creates an
      exceptional visualization and thought-out functionality.
@@ -26,7 +27,20 @@ const message = [
   },
 ];
 
-const About = () => {
+const fallbackDesc = `Fasraf business solutions is a
+business solution provider and management consultancy firm
+based in Ethiopia. The company was founded with the aim of providing
+ high-quality business solution and consulting
+ services to businesses and start-ups in the region to help them achieve their goals and objectives.`;
+
+type Props = {
+  aboutSection: {
+    description: string;
+    message: { startup: string; corporate: string };
+  };
+};
+
+const About = ({ aboutSection }: Props) => {
   return (
     <div className={s.container}>
       <div className={s.bg}>
@@ -49,68 +63,46 @@ const About = () => {
           </div>
 
           <Typography className={s.desc}>
-            Fasraf business solutions is a business solution provider and
-            management consultancy firm based in Ethiopia. The company was
-            founded with the aim of providing high-quality business solution and
-            consulting services to businesses and start-ups in the region to
-            help them achieve their goals and objectives.
+            {aboutSection.description || fallbackDesc}
           </Typography>
         </div>
 
         <div className={s.msgs}>
-          {message.map((msg) => (
-            <div key={msg.icon.src} className={s.msg}>
-              <SVG
-                src={msg.icon.src}
-                title="React"
-                cacheRequests={false}
-                loader={<h1>this is loading</h1>}
-              />
+          {message.map((message) => (
+            <div key={message.icon.src} className={s.msg}>
+              <div className={s.icon}>
+                <Image src={message.icon} alt="icon" />
+              </div>
 
               <Typography variant="h4" className={s.title}>
-                {msg.title}
+                {message.title}
               </Typography>
-              <Typography variant="body1">{msg.message}</Typography>
+              <Typography variant="body1">
+                {message.title === 'For Start-Ups'
+                  ? aboutSection.message.startup
+                  : aboutSection.message.corporate}
+              </Typography>
             </div>
           ))}
         </div>
 
         <Marquee autoFill gradient className={s.marquee}>
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Freelance network</Typography>}
-          />
-
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Innovative Approach</Typography>}
-          />
-
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Unique Idea</Typography>}
-          />
-
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Long-term Relationship</Typography>}
-          />
-
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Industry Best Practice</Typography>}
-          />
-
-          <Chip
-            className={s.marquee_chip}
-            variant="outlined"
-            label={<Typography>Data-driven Solutions</Typography>}
-          />
+          {[
+            'Freelance network',
+            'Innovative Approach',
+            'Unique Idea',
+            'Long-term Relationship',
+            'Industry Best Practice',
+            'Data-driven Solutions',
+          ].map((item) => (
+            <Chip
+              key={item}
+              className={s.marquee_chip}
+              color="primary"
+              variant="outlined"
+              label={<Typography> {item} </Typography>}
+            />
+          ))}
         </Marquee>
       </div>
     </div>

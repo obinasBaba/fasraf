@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { motion, useAnimate } from 'framer-motion';
 import FixedLayer from '@/components/commons/FixedLayer';
 import Footer from '@/components/commons/Footer';
+import { useAppContext } from '@/context/app';
 
 interface Props {
   children: React.ReactNode;
@@ -16,14 +17,14 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   const [scope, animate] = useAnimate();
 
+  const {} = useAppContext();
+
   return (
     <>
       <FixedLayer />
 
       <motion.div className={s.root}>
         <main>{children}</main>
-
-        <Footer />
       </motion.div>
     </>
   );

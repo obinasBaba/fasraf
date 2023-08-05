@@ -11,6 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import { EmailOutlined, PhoneOutlined } from '@mui/icons-material';
+import Link from 'next/link';
 
 const contactItems = [
   {
@@ -27,7 +28,16 @@ const contactItems = [
   },
 ];
 
-const ContactUs = () => {
+type Props = {
+  contactData: {
+    socials: [{ name: string; link: string }];
+    phone: string;
+    email: string;
+  };
+};
+const ContactUs = ({ contactData }: Props) => {
+  console.log('props  ------- ;', contactData);
+
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
@@ -46,19 +56,36 @@ const ContactUs = () => {
         </header>
 
         <div className={s.cards}>
-          {contactItems.map((item, index) => (
-            <div key={item.title} className={s.card_wrap}>
+          <div className={s.card_wrap}>
+            <Link
+              href={`mailto:${contactData?.email || 'giulianofcb@gmail.com'}`}
+              style={{ width: '100%' }}
+            >
               <div className={s.card}>
-                <Button variant="contained">{item.btnTxt}</Button>
+                <Button variant="contained"> Contact </Button>
                 <Divider />
                 <div className={s.info}>
-                  {item.Icon}
-                  <Typography variant="h6">{item.title}</Typography>
-                  <Typography variant="body2">{item.email}</Typography>
+                  <EmailOutlined />
+                  <Typography variant="h6">Email</Typography>
+                  <Typography variant="body1">{contactData?.email || 'giulianofcb@gmail.com'}</Typography>
                 </div>
               </div>
-            </div>
-          ))}
+            </Link>
+          </div>
+
+          <div className={s.card_wrap}>
+            <Link href={`tel:${contactData?.phone || '+251 912 611 477'}`} style={{ width: '100%' }}>
+              <div className={s.card}>
+                <Button variant="contained">Call</Button>
+                <Divider />
+                <div className={s.info}>
+                  <PhoneOutlined />
+                  <Typography variant="h6">Phone</Typography>
+                  <Typography variant="body1">{contactData?.phone || '+251 912 611 477'}</Typography>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
 
         <form>

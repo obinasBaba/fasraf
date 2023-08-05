@@ -31,7 +31,31 @@ export async function getStaticProps() {
     },
   }).then((res) => res.data.data.attributes.description as string);
 
-  console.log('hero text : ', hero);
+  const aboutSection = await Fasraf.get('/about-section', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => ({
+    description: res.data.data.attributes.header.description as string,
+    message: {
+      startup: res.data.data.attributes.message.startup as string,
+      corporate: res.data.data.attributes.message.corporate as string,
+    },
+  }));
+
+  const footerSection = await Fasraf.get('/social-link', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => ({
+    socials: res.data.data.attributes.social as [
+      { name: string; link: string },
+    ],
+    phone: res.data.data.attributes.phone as string,
+    email: res.data.data.attributes.email as string,
+  }));
+
+  // console.log('footerSection', aboutSection);
 
   const models = await Fasraf.get('/business-model', {
     params: {
@@ -48,6 +72,8 @@ export async function getStaticProps() {
         projects: projects,
         services: services,
         models: models,
+        aboutSection,
+        footerSection,
       },
       revalidate: 60,
     },
@@ -57,7 +83,7 @@ export async function getStaticProps() {
 export default function Home({
   pageData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  // console.log('pageData', pageData);
+  console.log('pageData', pageData);
 
   return (
     <>

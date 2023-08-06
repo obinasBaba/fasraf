@@ -93,6 +93,7 @@ const Footer = ({ footerSection }: Props) => {
             </Typography>
 
             <div className={s.socials}>
+              <WhatsApp/>
               {footerSection.socials.map((social, idx) => (
                 <Link
                   key={idx}

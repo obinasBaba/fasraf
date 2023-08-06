@@ -48,7 +48,7 @@ const Footer = ({ footerSection }: Props) => {
         icon: <Facebook fontSize="large" />,
       },
     ],
-    ['whatsapp', { icon: <Image src={WP} alt={'whatsApp'} /> }],
+    ['whatsapp', { icon: <Facebook fontSize="large" /> }],
     [
       'instagram',
       {
@@ -93,7 +93,6 @@ const Footer = ({ footerSection }: Props) => {
             </Typography>
 
             <div className={s.socials}>
-              <WhatsApp/>
               {footerSection.socials.map((social, idx) => (
                 <Link
                   key={idx}

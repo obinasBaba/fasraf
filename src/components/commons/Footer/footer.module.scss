@@ -160,6 +160,9 @@
           svg {
             fill: #a9a9a9;
           }
+          img{
+            filter: invert(1);
+          }
         }
 
         .desc {

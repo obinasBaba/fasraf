@@ -15,6 +15,7 @@ import {
   Twitter,
 } from '@mui/icons-material';
 import Link from 'next/link';
+import WP from './img.png';
 
 const socials = [Twitter, Facebook, Instagram, LinkedIn];
 
@@ -47,7 +48,7 @@ const Footer = ({ footerSection }: Props) => {
         icon: <Facebook fontSize="large" />,
       },
     ],
-    ['whatsapp', { icon: <WhatsApp /> }],
+    ['whatsapp', { icon: <Image src={WP} alt={'whatsApp'} /> }],
     [
       'instagram',
       {

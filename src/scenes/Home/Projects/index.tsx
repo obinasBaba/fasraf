@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 import { Navigation, Scrollbar } from 'swiper';
 import Image from 'next/image';
 import HeadIcon from '@/public/assets/project-header-icon.png';
-import { Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
+import { Divider, IconButton, Stack, Typography } from '@mui/material';
 import 'swiper/css';
 import {
   ArrowCircleLeftTwoTone,
   ArrowCircleRightTwoTone,
-  CalendarMonth,
   TaskAlt,
 } from '@mui/icons-material';
 import clsx from 'clsx';
@@ -35,10 +34,6 @@ type Props = {
 };
 
 const Projects = ({ projects }: Props) => {
-  const data = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-  console.log('projects  :', projects);
-
   return (
     <div className={s.container} id="projects">
       <div className={s.wrapper}>
@@ -72,7 +67,7 @@ const Projects = ({ projects }: Props) => {
         >
           <Swiper
             // loop
-            slidesPerView={3}
+            slidesPerView={'auto'}
             // centeredSlides={true}
             spaceBetween={50}
             grabCursor={true}

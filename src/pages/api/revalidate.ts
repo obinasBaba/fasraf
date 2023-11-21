@@ -1,9 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -20,7 +16,7 @@ export default async function handler(
     // await res.revalidate('/contact');
     console.log(' 😉 revalidated ---------> ');
 
-    return res.status(200).json({ revalidated: true });
+    return res.json({ revalidated: true });
   } catch (err: any) {
     console.log('error revalidating : ', err?.message);
     return res.status(500).send('Error revalidating');

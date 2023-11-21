@@ -102,7 +102,7 @@ const Footer = ({ footerSection }: Props) => {
                   as={social.link}
                 >
                   <IconButton color="primary">
-                    {socialIcons.get(social.name)?.icon}
+                    {socialIcons.get(social.name.toLowerCase())?.icon}
                   </IconButton>
                 </Link>
               ))}

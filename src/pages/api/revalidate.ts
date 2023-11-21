@@ -16,7 +16,7 @@ export default async function handler(
     console.log('revalidating ---------> ');
 
     await res.revalidate('/');
-    await res.revalidate('/contact');
+    // await res.revalidate('/contact');
 
     console.log(' 😉 revalidated ---------> ');
 

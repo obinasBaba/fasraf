@@ -1,5 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+export const config = {
+  runtime: 'edge',
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -10,20 +14,15 @@ export default async function handler(
   }
 
   try {
-    // this should be the actual path not a rewritten path
-    // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-
     console.log('revalidating ---------> ');
 
     await res.revalidate('/');
     // await res.revalidate('/contact');
-
     console.log(' 😉 revalidated ---------> ');
 
-    return res.json({ revalidated: true });
-  } catch (err) {
-    // If there was an error, Next.js will continue
-    // to show the last successfully generated page
+    return res.status(200).json({ revalidated: true });
+  } catch (err: any) {
+    console.log('error revalidating : ', err?.message);
     return res.status(500).send('Error revalidating');
   }
 }

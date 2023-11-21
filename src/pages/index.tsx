@@ -15,7 +15,7 @@ export async function getStaticProps() {
     return res.data.data.attributes.project as any[];
   });
 
-  // console.log('projects -- ', projects.projects);
+  console.log('projects -- ', projects);
 
   const services = await Fasraf.get('/service-section', {
     params: {

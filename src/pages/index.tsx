@@ -4,87 +4,85 @@ import { Fasraf } from '@/lib/strapi';
 import { InferGetStaticPropsType } from 'next';
 
 export async function getStaticProps() {
-  const [projects, services, hero, aboutSection, footerSection, models] =
-    await Promise.all([
-      await Fasraf.get('/project-section', {
-        params: {
-          populate: ['project', 'project.achievements', 'project.thumbnail'],
-        },
-      }).then((res) => {
-        // console.log('project res : ', res.data);
+  /* const [projects, services, hero, aboutSection, footerSection, models] =
+     await Promise.all([
+       await Fasraf.get('/project-section', {
+         params: {
+           populate: ['project', 'project.achievements', 'project.thumbnail'],
+         },
+       }).then((res) => {
+         // console.log('project res : ', res.data);
 
-        return res.data.data.attributes.project as any[];
-      }),
+         return res.data.data.attributes.project as any[];
+       }),
 
-      await Fasraf.get('/service-section', {
-        params: {
-          populate: ['services'],
-        },
-      }).then((res) => res.data.data.attributes.services as any[]),
+       await Fasraf.get('/service-section', {
+         params: {
+           populate: ['services'],
+         },
+       }).then((res) => res.data.data.attributes.services as any[]),
 
-      await Fasraf.get('/front-section', {
-        params: {
-          populate: '*',
-        },
-      }).then((res) => res.data.data.attributes.description as string),
+       await Fasraf.get('/front-section', {
+         params: {
+           populate: '*',
+         },
+       }).then((res) => res.data.data.attributes.description as string),
 
-      await Fasraf.get('/about-section', {
-        params: {
-          populate: '*',
-        },
-      }).then((res) => ({
-        description: res.data.data.attributes.header.description as string,
-        message: {
-          startup: res.data.data.attributes.message.startup as string,
-          corporate: res.data.data.attributes.message.corporate as string,
-        },
-      })),
+       await Fasraf.get('/about-section', {
+         params: {
+           populate: '*',
+         },
+       }).then((res) => ({
+         description: res.data.data.attributes.header.description as string,
+         message: {
+           startup: res.data.data.attributes.message.startup as string,
+           corporate: res.data.data.attributes.message.corporate as string,
+         },
+       })),
 
-      await Fasraf.get('/social-link', {
-        params: {
-          populate: '*',
-        },
-      }).then((res) => ({
-        socials: res.data.data.attributes.social as [
-          { name: string; link: string },
-        ],
-        phone: res.data.data.attributes.phone as string,
-        email: res.data.data.attributes.email as string,
-      })),
+       await Fasraf.get('/social-link', {
+         params: {
+           populate: '*',
+         },
+       }).then((res) => ({
+         socials: res.data.data.attributes.social as [
+           { name: string; link: string },
+         ],
+         phone: res.data.data.attributes.phone as string,
+         email: res.data.data.attributes.email as string,
+       })),
 
-      await Fasraf.get('/business-model', {
-        params: {
-          populate: '*',
-        },
-      }).then((res) => res.data.data.attributes.models as any[]),
-    ]);
+       await Fasraf.get('/business-model', {
+         params: {
+           populate: '*',
+         },
+       }).then((res) => res.data.data.attributes.models as any[]),
+     ]);
+ */
+  const projects = await Fasraf.get('/project-section', {
+    params: {
+      populate: ['project', 'project.achievements', 'project.thumbnail'],
+    },
+  }).then((res) => {
+    // console.log('project res : ', res.data);
 
-  /* const projects = await Fasraf.get('/project-section', {
-     params: {
-       populate: ['project', 'project.achievements', 'project.thumbnail'],
-     },
-   }).then((res) => {
-     // console.log('project res : ', res.data);
+    return res.data.data.attributes.project as any[];
+  });
+  console.log('projects -- ', projects);
 
-     return res.data.data.attributes.project as any[];
-   });
-     console.log('projects -- ', projects);
-
-   */
-
-  /*const services = await Fasraf.get('/service-section', {
+  const services = await Fasraf.get('/service-section', {
     params: {
       populate: ['services'],
     },
-  }).then((res) => res.data.data.attributes.services as any[]);*/
+  }).then((res) => res.data.data.attributes.services as any[]);
 
-  /* const hero = await Fasraf.get('/front-section', {
-     params: {
-       populate: '*',
-     },
-   }).then((res) => res.data.data.attributes.description as string); */
+  const hero = await Fasraf.get('/front-section', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => res.data.data.attributes.description as string);
 
-  /*const aboutSection = await Fasraf.get('/about-section', {
+  const aboutSection = await Fasraf.get('/about-section', {
     params: {
       populate: '*',
     },
@@ -94,28 +92,26 @@ export async function getStaticProps() {
       startup: res.data.data.attributes.message.startup as string,
       corporate: res.data.data.attributes.message.corporate as string,
     },
-  }));*/
+  }));
 
-  /* const footerSection = await Fasraf.get('/social-link', {
-     params: {
-       populate: '*',
-     },
-   }).then((res) => ({
-     socials: res.data.data.attributes.social as [
-       { name: string; link: string },
-     ],
-     phone: res.data.data.attributes.phone as string,
-     email: res.data.data.attributes.email as string,
-   }));
- */
+  const footerSection = await Fasraf.get('/social-link', {
+    params: {
+      populate: '*',
+    },
+  }).then((res) => ({
+    socials: res.data.data.attributes.social as [
+      { name: string; link: string },
+    ],
+    phone: res.data.data.attributes.phone as string,
+    email: res.data.data.attributes.email as string,
+  }));
   // console.log('footerSection', aboutSection);
 
-  /* const models = await Fasraf.get('/business-model', {
+  const models = await Fasraf.get('/business-model', {
     params: {
       populate: '*',
     },
   }).then((res) => res.data.data.attributes.models as any[]);
-*/
   // console.log('business-model -- ', models);
 
   return {

@@ -11,10 +11,12 @@ export default async function handler(
 
   try {
     console.log('revalidating ---------> ');
+    console.time('revalidate');
 
     await res.revalidate('/');
     // await res.revalidate('/contact');
     console.log(' 😉 revalidated ---------> ');
+    console.timeEnd('revalidate');
 
     return res.json({ revalidated: true });
   } catch (err: any) {

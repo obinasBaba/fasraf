@@ -124,7 +124,7 @@ export async function getStaticProps() {
         aboutSection,
         footerSection,
       },
-      // revalidate: 10,
+      revalidate: 10,
     },
   };
 }

@@ -21,8 +21,8 @@ export async function getStaticProps() {
     props: {
       pageData: {
         contactData,
-      },
-      // revalidate: 60,
+      }, // revalidate: 60,
+      revalidate: 10,
     },
   };
 }

@@ -13,7 +13,7 @@ export default async function handler(
     console.log('revalidating ---------> ');
     // console.time('revalidate');
 
-     void res.revalidate('/');
+     await res.revalidate('/');
     // await res.revalidate('/contact');
     console.log(' 😉 revalidated ---------> ');
     // console.timeEnd('revalidate');

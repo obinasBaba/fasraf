@@ -1,9 +1,9 @@
 {
-  "name": "rahove-portfolio",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "fasraf-consulting",
+  "description": "fasraf consulting company",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (@jpedroschmitz)",
+  "author": "Henok Getachew",
   "license": "MIT",
   "keywords": [
     "nextjs",

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import Lotti, { AnimationDirection, AnimationItem } from "lottie-web";
-import buildPath from '@/public/assets/lotti/build.json';
+import Lotti, { AnimationDirection, AnimationItem } from 'lottie-web';
 
-const LottiIcon = ({ name, icon }: any) => {
+const LottiIcon = ({ name, icon }: { name: string; icon: object }) => {
   const lottiRef = useRef<AnimationItem>();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -20,14 +19,12 @@ const LottiIcon = ({ name, icon }: any) => {
       animationData: icon, // path: buildPath.src,
     });
 
-    let r : AnimationDirection = 1;
-    if (true) {
-      lottiRef.current?.addEventListener('complete', () => {
-        r === 1 ? (r = -1) : r === -1 && (r = 1);
-        lottiRef.current?.setDirection(r);
-        lottiRef.current?.play();
-      });
-    }
+    let r: AnimationDirection = 1;
+    lottiRef.current?.addEventListener('complete', () => {
+      r === 1 ? (r = -1) : r === -1 && (r = 1);
+      lottiRef.current?.setDirection(r);
+      lottiRef.current?.play();
+    });
 
     return () => Lotti.destroy(name);
   }, []);

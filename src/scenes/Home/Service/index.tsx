@@ -4,10 +4,14 @@ import { Stack, Typography } from '@mui/material';
 import SVG from 'react-inlinesvg';
 import HeaderIcon from './service-header-icon.svg';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
+import { services as sData } from '@/scenes/Home/Service/data';
 
 // import LottiIcon only form client side
 
-// const LottiIcon = dynamic(() => import('@/scenes/Home/Service/LottiIcon'));
+const LottiIcon = dynamic(() => import('@/scenes/Home/Service/LottiIcon'), {
+  ssr: false,
+});
 
 type Props = {
   services: any[];
@@ -41,7 +45,7 @@ const Service = ({ services }: Props) => {
                   services.title.toLowerCase().includes('risk') && s.risk,
                 ])}
               >
-                {/*<LottiIcon name={services.title} icon={sData[idx].icon} />*/}
+                <LottiIcon name={services.title} icon={sData[idx].icon} />
               </div>
               <Typography variant="h5" className={s.title}>
                 {services.title}

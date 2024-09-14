@@ -50,8 +50,6 @@ export const services = [
      informative concept note on envisaged business ideas.`,
   },
 
-
-
   {
     icon: manage,
     title: 'Operations Management',

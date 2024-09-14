@@ -1,3 +1,5 @@
+// 'use client';
+
 import React from 'react';
 import s from './fixed.module.scss';
 import TopNavBar from '@/components/commons/FixedLayer/TopNavBar';

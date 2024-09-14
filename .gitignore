@@ -4,10 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
+
 
 # JetBrains IDE files
 .idea/
-.env
 
 # testing
 /coverage
@@ -30,7 +31,9 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+.env
+.env.development.local
+.env.production.local
 
 # vercel
 .vercel
@@ -38,4 +41,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/junk/
+/.husky/
+/.env
+/.env.development.local
+/.env.production.local
+/prisma/.env.development
+
+/.vs/TravelAdvisorOS/FileContentIndex
+/.vs/TravelAdvisorOS/v17/.wsuo
+/package-lock.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+
+
+certificates
+

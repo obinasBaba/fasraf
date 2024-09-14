@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import s from './footer.module.scss';
 import Image from 'next/image';
@@ -15,7 +17,6 @@ import {
   Twitter,
 } from '@mui/icons-material';
 import Link from 'next/link';
-import WP from './img.png';
 
 const socials = [Twitter, Facebook, Instagram, LinkedIn];
 

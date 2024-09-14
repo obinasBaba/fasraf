@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import AppProvider from '@/context/app';
 import { MotionValueContextWrapper } from '@/context/MotionValuesContext';

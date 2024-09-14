@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import s from './contactus.module.scss';
 import HandIcon from './hand_icon.svg';

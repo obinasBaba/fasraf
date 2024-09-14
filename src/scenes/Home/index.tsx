@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import s from './home.module.scss';
 import Hero from '@/scenes/Home/Hero';
